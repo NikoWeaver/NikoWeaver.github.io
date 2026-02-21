@@ -431,3 +431,11 @@ export default function Home() {
     <p className="italic mb-2">Fall 2023 - Spring 2024</p>
   </div>
 </section>
+
+      {/* Footer */}
+      <footer className="border-t py-6 text-center text-sm text-muted-foreground">
+        <p>Niko Weaver - Mechanical Engineering Portfolio</p>
+      </footer>
+    </div>
+  )
+}
