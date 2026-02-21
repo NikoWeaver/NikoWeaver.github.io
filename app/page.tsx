@@ -375,58 +375,50 @@ export default function Home() {
           <h3 className="text-xl font-medium">Autonomous UAV</h3>
           <p className="italic mb-2">Summer 2025</p>
           <ul className="list-disc list-inside mb-4">
-            <li>
-              Designed and flew an autonomous UAV. The fixed-wing UAV weighs 2kg and has a wingspan of 1 meter. Used CFD
-              to optimize and validate geometries.
-            </li>
+            <li>Designed and flew an autonomous fixed wing UAV.</li>
+            <li>Used CFD to optimize and validate geometries.</li>
+            <li>Iterating after the first flight to increase thrust and optimize airfoils.</li>
           </ul>
 
-          <h3 className="text-xl font-medium">Underwater ROV - Duke Robotics Club</h3>
-          <p className="italic mb-2">September 2024 - present</p>
+          <h3 className="text-xl font-medium">Underwater AUV - Duke Robotics Club</h3>
+          <p className="italic mb-2">Fall 2024 - Present</p>
           <ul className="list-disc list-inside mb-4">
             <li>
-              Designed and machined major mechanical components of an autonomous submarine using Solidworks CAD and
+              Lead the design of multiple major mechanical components of an autonomous submarine using Solidworks CAD and
               Ansys Fluent.
             </li>
+            <li>{'RoboSub 2025 Competition Finalist - 7th place Overall, 3rd best Design report.'}</li>
           </ul>
 
           <h3 className="text-xl font-medium">Self-guided Rocket</h3>
           <p className="italic mb-2">Summer 2023</p>
           <ul className="list-disc list-inside mb-4">
-            <li>
-              Designed, built, and flew a ~1m long canard-guided rocket. Used an IMU and Arduino uno for closed-loop
-              control to maintain trajectory.
-            </li>
+            <li>Designed, built, and flew a 1 meter long canard-guided rocket.</li>
+            <li>Used an IMU and Arduino uno for closed-loop control to maintain trajectory.</li>
           </ul>
 
           <h3 className="text-xl font-medium">FRC Robot</h3>
           <p className="italic mb-2">Winter 2024</p>
           <ul className="list-disc list-inside mb-4">
-            <li>
-              Designed and manufactured a Pivoting disk shooter, electronics system, and drivetrain for my robotics team
-              using Autodesk Fusion CAD, CAM, and FEA.
-            </li>
+            <li>Designed a pivoting disk shooter, electronics system, and drivetrain.</li>
+            <li>Utah regional 2nd place, Idaho Regional Quality Award.</li>
           </ul>
 
           <h2 className="text-2xl font-semibold mt-6 mb-2">Experience</h2>
-          <h3 className="text-xl font-medium">Unpaid Intern</h3>
+          <h3 className="text-xl font-medium">Undergraduate Researcher</h3>
+          <p className="italic mb-2">Fall 2025 - Present</p>
+          <p className="font-medium mb-2">Duke University General Robotics Lab</p>
+          <ul className="list-disc list-inside mb-4">
+            <li>Leading a project to create an underwater swarm robot.</li>
+            <li>Currently focusing on underwater locomotion and inter-robot communication.</li>
+          </ul>
+
+          <h3 className="text-xl font-medium">Undergraduate Intern</h3>
           <p className="italic mb-2">Summer 2025</p>
           <p className="font-medium mb-2">University of Utah Aerospace Engineering Department</p>
           <ul className="list-disc list-inside mb-4">
-            <li>
-              Designed a 4-axis robot arm to move a model in a wind tunnel. Used MATLAB to simulate the robot arm in
-              real-time operation and collect torque values.
-            </li>
-          </ul>
-
-          <h3 className="text-xl font-medium">Freelance engineer</h3>
-          <p className="italic mb-2">Summer 2024 - present</p>
-          <p className="font-medium mb-2">Self-employed</p>
-          <ul className="list-disc list-inside mb-4">
-            <li>
-              Used CAD and 3D printing to validate a product before being launched for large-scale manufacturing.
-              Provided a working prototype to the client in under 2 weeks.
-            </li>
+            <li>Designed a 4-axis robot arm to move a model in a wind tunnel.</li>
+            <li>Used MATLAB to simulate real-time operation and collect torque values.</li>
           </ul>
 
           <h2 className="text-2xl font-semibold mt-6 mb-2">Leadership</h2>
