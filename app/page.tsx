@@ -29,7 +29,7 @@ const skills = [
 export default function Home() {
   return (
     <div className="min-h-screen bg-background">
-      {/* Hero Section */}
+      {/* Hero */}
       <section id="home" className="container mx-auto px-4 py-24 md:py-32">
         <div className="flex flex-col items-center text-center">
           <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
@@ -317,7 +317,7 @@ export default function Home() {
       <Button className="flex items-center gap-2">
         <Download className="h-4 w-4" />
         <a
-          href="/mnt/data/Resume1072025.pdf"
+          href="https://drive.google.com/file/d/1d2OFM8HKAMxMuZhgnBw4-9NqP2V0vR_5/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
           download
