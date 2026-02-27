@@ -84,7 +84,7 @@ export default function UAVProject() {
               </ul>
               <p className="text-muted-foreground">
                 I love to push the boundaries of my skills, and this is a great project to do so! I flew the UAV first
-                in the summer of 2025 and plan fly it back at Duke during fall semester 2025.
+                in the summer of 2025 and plan fly it back at Duke during spring semester 2025.
               </p>
             </div>
           </CardContent>
@@ -152,30 +152,35 @@ export default function UAVProject() {
               <TableHeader>
                 <TableRow>
                   <TableHead>Parameter</TableHead>
-                  <TableHead>Current Value</TableHead>
                   <TableHead>Target Value</TableHead>
+                  <TableHead>V1 Value</TableHead>
+                  <TableHead>V2 Value</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 <TableRow>
                   <TableCell>Estimated Weight</TableCell>
-                  <TableCell>2.0 kg</TableCell>
                   <TableCell>1.5 kg</TableCell>
+                  <TableCell>2.0 kg</TableCell>
+                  <TableCell>1.75kg</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell>Airframe Weight</TableCell>
-                  <TableCell>400</TableCell>
                   <TableCell>500g</TableCell>
+                  <TableCell>500g</TableCell>
+                  <TableCell>400g</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell>Thrust Output</TableCell>
-                  <TableCell>1.2-1.4 kg</TableCell>
                   <TableCell>1.5 kg</TableCell>
+                  <TableCell>1.3kg</TableCell>
+                  <TableCell>2.5kg</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell>Thrust-to-Weight Ratio</TableCell>
-                  <TableCell>0.6-0.7:1</TableCell>
                   <TableCell>1:1</TableCell>
+                  <TableCell>0.6-0.7:1</TableCell>
+                  <TableCell>1.4:1</TableCell>
                 </TableRow>
               </TableBody>
             </Table>
@@ -193,24 +198,29 @@ export default function UAVProject() {
               <TableHeader>
                 <TableRow>
                   <TableHead>Component</TableHead>
-                  <TableHead>Specification</TableHead>
+                  <TableHead>V1 Specification</TableHead>
+                  <TableHead>V2 Specification</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 <TableRow>
                   <TableCell>Flight Computer</TableCell>
                   <TableCell>Pixhawk 6C running ArduPilot</TableCell>
+                  <TableCell>Pixhawk 6C running ArduPilot</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell>Batteries</TableCell>
-                  <TableCell>Two 4s 6000mah LiPo batteries</TableCell>
+                  <TableCell>4s 6000mah LiPo batteries</TableCell>
+                  <TableCell>4s 6000mah LiPo batteries</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell>Propulstion</TableCell>
                   <TableCell>Two 40mm Electric Ducted Fans</TableCell>
+                  <TableCell>Two 9 inch propellers on 2700kV motors</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell>GPS Accuracy</TableCell>
+                  <TableCell>1.5m</TableCell>
                   <TableCell>1.5m</TableCell>
                 </TableRow>
               </TableBody>
@@ -229,9 +239,8 @@ export default function UAVProject() {
               <div>
                 <h3 className="mb-2 font-semibold">Thrust-to-Weight Optimization</h3>
                 <p className="text-muted-foreground">
-                  The current iteration will have a 2:3 thrust-to-weight ratio, with future iterations aiming for a 1:1
-                  ratio. To achieve a 1:1 ratio I will hve to optimize the Weight of the airframe and/or increase the
-                  thrust of the aircraft
+                  The newest iteration will have a 1.5:1 thrust-to-weight ratio, as the new propellers
+                  provide nearly double the thrust of the previous iteration.
                 </p>
               </div>
               <Separator />
@@ -240,26 +249,34 @@ export default function UAVProject() {
                 <p className="text-muted-foreground">
                   The airframe design incorporates modern stealth aircraft principles while maintaining optimal
                   aerodynamic performance. The large wings provide lots of lift while the teardrop shaped body keeps
-                  drag to a minimum
+                  drag to a minimum. It also looks pretty cool.
                 </p>
               </div>
               <Separator />
               <div>
-                <h3 className="mb-2 font-semibold">Future Improvements</h3>
+                <h3 className="mb-2 font-semibold">V1-->V2 Improvements</h3>
                 <ul className="list-inside list-disc space-y-2 text-muted-foreground">
-                  <li>Weight reduction through material optimization</li>
-                  <li>Enhanced propulsion system for improved thrust</li>
-                  <li>Refined aerodynamic surfaces for better performance</li>
+                  <li>Weight reduction through structural optimization (400g->500g)</li>
+                  <li>Enhanced propulsion system for improved thrust (1.3kg->2.5kg)</li>
+                  <li>Stronger wings to handle the increased thrust and prevent damage</li>
                 </ul>
               </div>
               <Separator />
               <div>
                 <h3 className="mb-2 font-semibold">Manufacturing Method</h3>
                 <p className="text-muted-foreground">
-                  The UAV is designed to be entirely 3D printed, with an airframe weight goal of 500g. This
+                  The UAV is designed to be entirely 3D printed, with an airframe weight goal of 500g, but ultimately getting down to 400g! This
                   manufacturing approach allows for rapid prototyping and iterative design improvements while
                   maintaining structural integrity.
+
                 </p>
+                <p className="text-muted-foreground">
+                </p>
+              </div>
+              <Separator />
+              <div>
+                <h3 className="mb-2 font-semibold">MASSIVE Thank you to the Duke Colab for funding this project,
+                as well as providing 3D printing services, and technical expertise!</h3>
               </div>
             </div>
           </CardContent>

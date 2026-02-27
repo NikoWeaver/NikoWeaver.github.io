@@ -6,7 +6,42 @@ export default function BlogPage() {
     <div className="container mx-auto px-4 py-16">
       <h1 className="mb-8 text-center text-3xl font-bold tracking-tighter sm:text-4xl">Blog</h1>
 
-      {/* New UAV Summer Update Blog Post */}
+      {/* UAV UPDATE */}
+      <Card className="mb-8">
+        <CardHeader>
+          <div className="flex items-center justify-between">
+            <div>
+              <CardTitle>UAV WINTER UPDATE!</CardTitle>
+              <CardDescription>We're so back</CardDescription>
+            </div>
+            <span className="text-sm text-muted-foreground">August 2025</span>
+          </div>
+        </CardHeader>
+        <CardContent>
+          <div className="relative aspect-video w-full overflow-hidden rounded-lg mb-4">
+            <Image
+              src="https://zmtbsodvdekwtp1d.public.blob.vercel-storage.com/Screenshot%202026-02-27%20at%2010.59.07%E2%80%AFAM.png"
+              alt="UAV Winter Update!"
+              fill
+              className="object-contain bg-background"
+            />
+          </div>
+          <p className="text-muted-foreground mb-4">
+            The UAV is nearing its second flight!  I have reprinted most of the parts, with the help of the Duke colab, and will soon be ready for preflight testing!
+          </p>
+          <p className="text-muted-foreground mb-4">
+            My plans are to tow the UAV with my bike and find the takeoff speed! Very scientific!
+          </p>
+          <p className="text-muted-foreground mb-4">
+            After that I will be ready to fly the UAV manually, then autonomously hopefully in the same flight!
+          </p>
+          <p className="mb-2">
+            The one major change between this flight and the last is that I am adding propellers instead of EDFs, which will give me nearly double the thrust I had before.
+          </p>
+        </CardContent>
+      </Card>
+
+      {/* UAV Summer Update Blog Post */}
       <Card className="mb-8">
         <CardHeader>
           <div className="flex items-center justify-between">
