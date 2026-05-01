@@ -4,6 +4,7 @@ import type React from "react"
 
 import { ArrowLeft } from "lucide-react"
 import Link from "next/link"
+import Script from "next/script"
 import { useEffect, useState } from "react"
 
 import { Button } from "@/components/ui/button"
@@ -59,43 +60,40 @@ export default function WindTunnelTranslationProject() {
       originalError.apply(console, args)
     }
 
-    // Load the model-viewer script
-    if (!document.querySelector('script[src*="model-viewer"]')) {
-      const script = document.createElement("script")
-      script.type = "module"
-      script.src = "https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
-      document.head.appendChild(script)
-
-      script.onload = () => {
-        // Add event listeners after script loads
-        setTimeout(() => {
-          const modelViewer = document.querySelector("model-viewer")
-          if (modelViewer) {
-            modelViewer.addEventListener("load", () => {
-              setModelLoaded(true)
-              setModelError(false)
-            })
-
-            modelViewer.addEventListener("error", (event) => {
-              const errorMsg = String(event)
-              if (!errorMsg.includes("texture")) {
-                console.error("Model viewer error:", event)
-                setModelError(true)
-              }
-              setModelLoaded(true)
-            })
-          }
-        }, 1000)
-      }
-    }
-
     return () => {
       console.error = originalError
     }
   }, [])
 
+  const handleScriptLoad = () => {
+    setTimeout(() => {
+      const modelViewer = document.querySelector("model-viewer")
+      if (modelViewer) {
+        modelViewer.addEventListener("load", () => {
+          setModelLoaded(true)
+          setModelError(false)
+        })
+
+        modelViewer.addEventListener("error", (event) => {
+          const errorMsg = String(event)
+          if (!errorMsg.includes("texture")) {
+            console.error("Model viewer error:", event)
+            setModelError(true)
+          }
+          setModelLoaded(true)
+        })
+      }
+    }, 1000)
+  }
+
   return (
     <div className="min-h-screen bg-background">
+      <Script
+        type="module"
+        src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+        strategy="afterInteractive"
+        onLoad={handleScriptLoad}
+      />
       <div className="container mx-auto px-4 py-8">
         {/* Navigation */}
         <div className="mb-8">
