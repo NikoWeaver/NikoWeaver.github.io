@@ -32,7 +32,7 @@ export default function Home() {
       {/* Hero */}
       <section id="home" className="container mx-auto px-4 py-24 md:py-32">
         <div className="flex flex-col items-center text-center">
-          <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
+          <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-foreground">
             Niko Weaver
           </h1>
           <p className="mt-4 text-xl text-muted-foreground">Mechanical Engineering Student at Duke University</p>
