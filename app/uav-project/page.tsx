@@ -276,7 +276,7 @@ export default function UAVProject() {
               <Separator />
               <div>
                 <h3 className="mb-2 font-semibold">MASSIVE Thank you to the Duke Colab for funding this project,
-                as well as providing 3D printing services, and technical expertise!</h3>
+                  as well as providing 3D printing services, and technical expertise!</h3>
               </div>
             </div>
           </CardContent>
