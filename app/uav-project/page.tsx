@@ -130,7 +130,7 @@ export default function UAVProject() {
                 <h4 className="mb-2 font-semibold">MQ-28 Ghost Bat</h4>
                 <div className="relative aspect-[16/9] w-full overflow-hidden rounded-lg">
                   <Image
-                    src="https://www.boeing.com.au/content/dam/boeing/en-au/media/boeingaustralia/boeing-airpower-teaming-system/MQ-28A_Ghost_Bat_Courtesy_Defence.jpg"
+                    src="https://www.boeing.com/content/dam/boeing/v2/products/mq-28-ghost-bat/mq-28-ghost-bat-roadblock-2.jpg"
                     alt="MQ-28 Ghost Bat"
                     fill
                     className="object-cover"
