@@ -99,12 +99,12 @@ export default function FRCRobotProject() {
               </ul>
 
               <h3 className="text-lg font-semibold">Swerve Drivebase</h3>
-              <p className="text-muted-foreground">
+              <ul className="list-inside list-disc space-y-2 text-muted-foreground">
                 <li>
                   Designed the robot's swerve drivebase to be as compact as possible (only 26"x26") and to also keep the
-                  elctronics + battery low to the ground
+                  electronics + battery low to the ground
                 </li>
-              </p>
+              </ul>
             </div>
           </CardContent>
         </Card>

@@ -48,50 +48,37 @@ export default function WindTunnelTranslationProject() {
   const [modelLoaded, setModelLoaded] = useState(false)
 
   useEffect(() => {
-    const originalError = console.error
-    console.error = (...args) => {
-      if (
-        args[0]?.includes?.("THREE.GLTFLoader") ||
-        (typeof args[0] === "string" && args[0].includes("Couldn't load texture"))
-      ) {
-        return
-      }
-      originalError.apply(console, args)
-    }
-
-    // Load the model-viewer script
     if (!document.querySelector('script[src*="model-viewer"]')) {
       const script = document.createElement("script")
       script.type = "module"
       script.src = "https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
       document.head.appendChild(script)
+    }
 
-      script.onload = () => {
-        // Add event listeners after script loads
-        setTimeout(() => {
-          const modelViewer = document.querySelector("model-viewer")
-          if (modelViewer) {
-            modelViewer.addEventListener("load", () => {
-              setModelLoaded(true)
-              setModelError(false)
-            })
+    const attachListeners = () => {
+      const modelViewer = document.querySelector("model-viewer")
+      if (!modelViewer) return false
+      modelViewer.addEventListener("load", () => {
+        setModelLoaded(true)
+        setModelError(false)
+      })
+      modelViewer.addEventListener("error", () => {
+        setModelError(true)
+        setModelLoaded(true)
+      })
+      return true
+    }
 
-            modelViewer.addEventListener("error", (event) => {
-              const errorMsg = String(event)
-              if (!errorMsg.includes("texture")) {
-                console.error("Model viewer error:", event)
-                setModelError(true)
-              }
-              setModelLoaded(true)
-            })
-          }
-        }, 1000)
+    let attempts = 0
+    const maxAttempts = 40 // ~12s, then give up polling
+    const interval = setInterval(() => {
+      attempts += 1
+      if (attachListeners() || attempts >= maxAttempts) {
+        clearInterval(interval)
       }
-    }
+    }, 300)
 
-    return () => {
-      console.error = originalError
-    }
+    return () => clearInterval(interval)
   }, [])
 
   return (
@@ -375,13 +362,6 @@ end`}</code>
           </CardContent>
         </Card>
 
-        {/* Add CSS for spinner animation */}
-        <style jsx>{`
-          @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-          }
-        `}</style>
       </div>
     </div>
   )

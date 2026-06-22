@@ -32,10 +32,13 @@ export default function Home() {
       {/* Hero */}
       <section id="home" className="container mx-auto px-4 py-24 md:py-32">
         <div className="flex flex-col items-center text-center">
-          <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-foreground">
+          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl text-foreground">
             Niko Weaver
           </h1>
-          <p className="mt-4 text-xl text-muted-foreground">Mechanical Engineering Student at Duke University</p>
+          <p className="mt-4 text-xl text-muted-foreground">
+            Mechanical Engineering Student at{" "}
+            <span className="font-medium text-[#00539B] dark:text-[#4ea3e0]">Duke University</span>
+          </p>
           <div className="mt-6 flex gap-4">
             <div className="relative group">
               <a href="tel:+16178521905">
@@ -76,7 +79,7 @@ export default function Home() {
 
       {/* About Me Section */}
       <section id="about" className="container mx-auto px-4 py-16">
-        <h2 className="mb-8 text-center text-4xl font-bold tracking-tighter sm:text-5xl">About Me</h2>
+        <h2 className="mb-8 text-center text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">About Me</h2>
         <div className="flex flex-col md:flex-row items-center gap-8 max-w-4xl mx-auto">
           <div className="flex-1">
             <p className="text-lg text-muted-foreground">
@@ -107,17 +110,17 @@ export default function Home() {
 
       {/* Projects Section */}
       <section id="projects" className="container mx-auto px-4 py-16">
-        <h2 className="mb-12 text-center md:text-6xl font-bold tracking-tighter">Engineering Projects</h2>
+        <h2 className="mb-12 text-center text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">Engineering Projects</h2>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {/* UAV Project */}
-          <Card className="overflow-hidden border-2 transition-all duration-300 hover:border-primary hover:shadow-lg dark:hover:shadow-primary/50 hover:shadow-primary/20">
+          <Card className="group overflow-hidden border transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-lg">
             <Link href="/uav-project" className="block">
               <div className="relative aspect-video">
                 <Image
                   src="https://zmtbsodvdekwtp1d.public.blob.vercel-storage.com/IMG_1814.JPG"
                   alt="UAV Design"
                   fill
-                  className="object-cover transition-transform duration-300 hover:scale-105"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
               <CardHeader>
@@ -133,14 +136,14 @@ export default function Home() {
           </Card>
 
           {/* Underwater AUV Project */}
-          <Card className="overflow-hidden border-2 transition-all duration-300 hover:border-primary hover:shadow-lg dark:hover:shadow-primary/50 hover:shadow-primary/20">
+          <Card className="group overflow-hidden border transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-lg">
             <Link href="/underwater-rov" className="block">
               <div className="relative aspect-video">
                 <Image
                   src="/images/minibot-20render.png"
                   alt="Underwater ROV"
                   fill
-                  className="object-cover transition-transform duration-300 hover:scale-105"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
               <CardHeader>
@@ -164,14 +167,14 @@ export default function Home() {
           </Card>
 
           {/* Wind Tunnel Translation Project */}
-          <Card className="overflow-hidden border-2 transition-all duration-300 hover:border-primary hover:shadow-lg dark:hover:shadow-primary/50 hover:shadow-primary/20">
+          <Card className="group overflow-hidden border transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-lg">
             <Link href="/wind-tunnel-translation" className="block">
               <div className="relative aspect-video">
                 <Image
                   src="https://fpc.mech.utah.edu/wp-content/uploads/2024/03/logo_fpc.png"
                   alt="Wind Tunnel Robot Arm"
                   fill
-                  className="object-cover transition-transform duration-300 hover:scale-105"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
               <CardHeader>
@@ -188,14 +191,14 @@ export default function Home() {
           </Card>
 
           {/* FRC Robot Project */}
-          <Card className="overflow-hidden border-2 transition-all duration-300 hover:border-primary hover:shadow-lg dark:hover:shadow-primary/50 hover:shadow-primary/20">
+          <Card className="group overflow-hidden border transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-lg">
             <Link href="/frc-robot" className="block">
               <div className="relative aspect-video">
                 <Image
                   src="/images/3245bot.jpeg"
                   alt="FRC Robot"
                   fill
-                  className="object-cover transition-transform duration-300 hover:scale-105"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
               <CardHeader>
@@ -211,14 +214,14 @@ export default function Home() {
           </Card>
 
           {/* Model Rocket Project */}
-          <Card className="overflow-hidden border-2 transition-all duration-300 hover:border-primary hover:shadow-lg dark:hover:shadow-primary/50 hover:shadow-primary/20">
+          <Card className="group overflow-hidden border transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-lg">
             <Link href="/model-rocket" className="block">
               <div className="relative aspect-video">
                 <Image
                   src="/images/rocket111.jpeg"
                   alt="Model Rocket"
                   fill
-                  className="object-cover transition-transform duration-300 hover:scale-105"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
               <CardHeader>
@@ -239,7 +242,7 @@ export default function Home() {
       {/* Skills Section with scrolling logos */}
       <section id="skills" className="py-16 overflow-hidden">
         <div className="container mx-auto px-4">
-          <h2 className="mb-12 text-center md:text-6xl font-bold tracking-tighter">Skills</h2>
+          <h2 className="mb-12 text-center text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">Skills</h2>
         </div>
         <div className="relative">
           {/* Gradient overlays for fade effect */}
@@ -280,7 +283,7 @@ export default function Home() {
 
       {/* Resume Section */}
       <section id="resume" className="container mx-auto px-4 py-16">
-        <h2 className="text-center font-bold tracking-tighter md:text-6xl">Resume</h2>
+        <h2 className="mb-12 text-center text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">Resume</h2>
         <div className="max-w-3xl mx-auto bg-card text-card-foreground p-8 rounded-lg shadow-lg">
           <div className="flex justify-between items-center mb-6">
             <h1 className="text-3xl font-bold">Niko Weaver</h1>
@@ -395,11 +398,6 @@ export default function Home() {
           </ul>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="border-t py-6 text-center text-sm text-muted-foreground">
-        <p>Niko Weaver - Mechanical Engineering Portfolio</p>
-      </footer>
     </div>
   )
 }
