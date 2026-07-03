@@ -84,7 +84,7 @@ export default function UAVProject() {
               </ul>
               <p className="text-muted-foreground">
                 I love to push the boundaries of my skills, and this is a great project to do so! I flew the UAV first
-                in the summer of 2025 and plan fly it back at Duke during spring semester 2025.
+                in the summer of 2025 and plan fly version 2 of the UAV during summer 2026!
               </p>
             </div>
           </CardContent>
@@ -198,7 +198,6 @@ export default function UAVProject() {
               <TableHeader>
                 <TableRow>
                   <TableHead>Component</TableHead>
-                  <TableHead>V1 Specification</TableHead>
                   <TableHead>V2 Specification</TableHead>
                 </TableRow>
               </TableHeader>
@@ -206,21 +205,17 @@ export default function UAVProject() {
                 <TableRow>
                   <TableCell>Flight Computer</TableCell>
                   <TableCell>Pixhawk 6C running ArduPilot</TableCell>
-                  <TableCell>Pixhawk 6C running ArduPilot</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell>Batteries</TableCell>
                   <TableCell>4s 6000mah LiPo batteries</TableCell>
-                  <TableCell>4s 6000mah LiPo batteries</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell>Propulstion</TableCell>
-                  <TableCell>Two 40mm Electric Ducted Fans</TableCell>
                   <TableCell>Two 9 inch propellers on 2700kV motors</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell>GPS Accuracy</TableCell>
-                  <TableCell>1.5m</TableCell>
                   <TableCell>1.5m</TableCell>
                 </TableRow>
               </TableBody>
