@@ -18,9 +18,9 @@ export default function Error({
 
   return (
     <div className="container mx-auto flex min-h-[60vh] flex-col items-center justify-center px-4 text-center">
-      <h1 className="text-4xl font-bold tracking-tight">Something went wrong</h1>
+      <h1 className="font-display text-4xl font-bold tracking-tight">Something went wrong</h1>
       <p className="mt-4 max-w-md text-muted-foreground">
-        An unexpected error occurred while loading this page. You can try again, or head back to the homepage.
+        Rapid unscheduled disassembly. You can try again, or head back to the homepage.
       </p>
       <div className="mt-8 flex gap-4">
         <Button onClick={reset}>Try again</Button>

@@ -8,28 +8,27 @@
   }
 }
 
-/* Adding keyframes for skills scroll animation */
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+::selection {
+  background: hsl(207 100% 30% / 0.9);
+  color: hsl(0 0% 100%);
 }
 
-.animate-scroll {
-  animation: scroll 30s linear infinite;
+.dark ::selection {
+  background: hsl(207 70% 55% / 0.9);
+  color: hsl(0 0% 5%);
 }
 
-.animate-scroll:hover {
-  animation-play-state: paused;
+/* Faint blueprint grid behind the hero */
+.hero-grid {
+  background-image: linear-gradient(hsl(var(--border) / 0.6) 1px, transparent 1px),
+    linear-gradient(90deg, hsl(var(--border) / 0.6) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(ellipse 75% 85% at 50% 40%, black 30%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 75% 85% at 50% 40%, black 30%, transparent 75%);
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .animate-scroll {
-    animation: none;
-  }
+.eyebrow {
+  letter-spacing: 0.18em;
 }
 
 @layer base {

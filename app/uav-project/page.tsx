@@ -23,7 +23,7 @@ export default function UAVProject() {
 
         {/* Project Header */}
         <div className="mb-12">
-          <h1 className="text-4xl font-bold tracking-tighter">UAV Design Project</h1>
+          <h1 className="font-display text-4xl font-bold tracking-tight">UAV Design Project</h1>
           <p className="mt-4 text-xl text-muted-foreground">Autonomous 3D Printed UAV (Version 2.0!)</p>
         </div>
 
@@ -47,7 +47,7 @@ export default function UAVProject() {
           <CardContent>
             <p className="text-muted-foreground mb-4">
               {
-                "Unfortunately, the first flight did not go as planned.  The EDFs did not have the thrust I expected, so the UAV could not accelerate quickly enough to take flight.  Fortunately, every system independly worked, so version two will be ready soon!"
+                "Unfortunately, the first flight did not go as planned.  The EDFs did not have the thrust I expected, so the UAV could not accelerate quickly enough to take flight.  Fortunately, every system independently worked, so version two will be ready soon!"
               }
             </p>
             <div className="aspect-video w-full rounded-lg overflow-hidden">
@@ -191,7 +191,7 @@ export default function UAVProject() {
         <Card className="mb-8">
           <CardHeader>
             <CardTitle>More Specifications</CardTitle>
-            <CardDescription>Current design featires</CardDescription>
+            <CardDescription>Current design features</CardDescription>
           </CardHeader>
           <CardContent>
             <Table>
@@ -211,7 +211,7 @@ export default function UAVProject() {
                   <TableCell>4s 6000mah LiPo batteries</TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell>Propulstion</TableCell>
+                  <TableCell>Propulsion</TableCell>
                   <TableCell>Two 9 inch propellers on 2700kV motors</TableCell>
                 </TableRow>
                 <TableRow>
@@ -249,10 +249,10 @@ export default function UAVProject() {
               </div>
               <Separator />
               <div>
-                <h3 className="mb-2 font-semibold">V1-->V2 Improvements</h3>
+                <h3 className="mb-2 font-semibold">V1 &rarr; V2 Improvements</h3>
                 <ul className="list-inside list-disc space-y-2 text-muted-foreground">
-                  <li>Weight reduction through structural optimization (400g->500g)</li>
-                  <li>Enhanced propulsion system for improved thrust (1.3kg->2.5kg)</li>
+                  <li>Weight reduction through structural optimization (500g &rarr; 400g)</li>
+                  <li>Enhanced propulsion system for improved thrust (1.3kg &rarr; 2.5kg)</li>
                   <li>Stronger wings to handle the increased thrust and prevent damage</li>
                 </ul>
               </div>
@@ -280,7 +280,7 @@ export default function UAVProject() {
 
       {/* Gallery Section */}
       <section className="container mx-auto px-4 py-16">
-        <h2 className="mb-8 text-center text-3xl font-bold tracking-tighter sm:text-4xl">Project Gallery</h2>
+        <h2 className="mb-8 text-center font-display text-3xl font-bold tracking-tight sm:text-4xl">Project Gallery</h2>
         <div className="grid gap-4 md:grid-cols-2">
           <div className="relative aspect-video overflow-hidden rounded-lg">
             <Image

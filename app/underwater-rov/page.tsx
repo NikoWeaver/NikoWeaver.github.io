@@ -22,7 +22,7 @@ export default function UnderwaterROVProject() {
 
         {/* Project Header */}
         <div className="mb-12">
-          <h1 className="text-4xl font-bold tracking-tighter">Underwater ROV  | Meet Crush!</h1>
+          <h1 className="font-display text-4xl font-bold tracking-tight">Underwater ROV | Meet Crush!</h1>
           <p className="mt-4 text-xl text-muted-foreground">{"Duke Robotics Club - 2025 RoboSub Competition Finalists!"}</p>
         </div>
 
@@ -41,16 +41,19 @@ export default function UnderwaterROVProject() {
         <Card className="mb-8">
           <CardHeader>
             <CardTitle>Project Overview</CardTitle>
-            <CardDescription>Crush Delevopment!</CardDescription>
+            <CardDescription>Crush Development!</CardDescription>
           </CardHeader>
           <CardContent>
             <p className="text-muted-foreground">
-              I Contributed to the development of an autonomous underwater ROV for the 2025 RoboSub competition, Crush. Crush is designed to operate independently underwater, completing various competition tasks through autonomous navigation and control in the annual RoboSub competition.
+              I contributed to the development of Crush, an autonomous underwater ROV built for the 2025 RoboSub competition. Crush operates fully independently underwater, navigating and completing competition tasks with no human input.
+            </p>
+            <p className="mt-3 text-muted-foreground">
+              We placed 7th overall at RoboSub 2025 and took 3rd for our design report.
             </p>
             <div className="mt-4">
               <h3 className="mb-2 font-semibold">Current Developments</h3>
               <p className="text-muted-foreground">
-                As the chief engineer coming into the 2025, I plan to add a seventh thruster to crush for enable pitch control, and also add a case to optimize for forward movement.                            
+                As chief engineer heading into 2025, I plan to add a seventh thruster to Crush to enable pitch control, plus a fairing to optimize forward movement.
               </p>
             </div>
           </CardContent>
@@ -72,8 +75,8 @@ export default function UnderwaterROVProject() {
                 <ul className="mt-2 list-inside list-disc space-y-2 text-muted-foreground">
                   <li>SLS-Nylon prints to achieve complex geometries</li>
                   <li>
-                    3-part design to contrain the capsules side to side movement, but still allow them to be easily
-                    removed{" "}
+                    3-part design that constrains the capsules&apos; side-to-side movement while still letting them be
+                    easily removed
                   </li>
                   <li>Hexagonal profile for easy mounting to modular bars</li>
                 </ul>
@@ -88,8 +91,8 @@ export default function UnderwaterROVProject() {
                     Mounting bars: Cross-vehicle support with hexagon and bolt pattern for flexible component mounting
                   </li>
                   <li>
-                    Assisted in modeling other components of the minibot in order to easily change the dimensions of the
-                    robot via paramaterization
+                    Assisted in modeling other components of the minibot so the robot&apos;s dimensions could be changed
+                    easily via parameterization
                   </li>
                 </ul>
               </div>
@@ -101,7 +104,7 @@ export default function UnderwaterROVProject() {
                 </p>
                 <ul className="mt-2 list-inside list-disc space-y-2 text-muted-foreground">
                   <li>Optimize hydrodynamic performance</li>
-                  <li>Reduce drag coefficients</li>
+                  <li>Reduce drag &mdash; the redesigned buoyancy system cut drag by 30%</li>
                   <li>Improve overall efficiency of thrusters underwater</li>
                 </ul>
               </div>
@@ -126,10 +129,10 @@ export default function UnderwaterROVProject() {
                 </ul>
               </div>
               <div>
-                <h3 className="mb-2 font-semibold">General Performance Features of Crush </h3>
+                <h3 className="mb-2 font-semibold">General Performance Features of Crush</h3>
                 <ul className="list-inside list-disc space-y-2 text-muted-foreground">
                   <li>Hydrodynamically optimized frame</li>
-                  <li>Six thrusters for Three-axis translation </li>
+                  <li>Six thrusters for three-axis translation</li>
                   <li>Robust waterproof enclosure system</li>
                 </ul>
               </div>

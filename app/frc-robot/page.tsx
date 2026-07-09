@@ -21,7 +21,7 @@ export default function FRCRobotProject() {
 
         {/* Project Header */}
         <div className="mb-12">
-          <h1 className="text-4xl font-bold tracking-tighter">FRC Robot - Team 3245</h1>
+          <h1 className="font-display text-4xl font-bold tracking-tight">FRC Robot - Team 3245</h1>
           <p className="mt-4 text-xl text-muted-foreground">
             2024 FIRST Robotics Competition Robot Design and Development
           </p>
@@ -47,7 +47,7 @@ export default function FRCRobotProject() {
           <CardContent>
             <p className="text-muted-foreground">
               As the captain and mechanical lead of my team in 2024, I was responsible for designing multiple major
-              systems on the Robot. Most notably, I designed the shooter, pivot, and swerve Drivebase of the robot.
+              systems on the robot. Most notably, I designed the shooter, pivot, and swerve drivebase.
             </p>
           </CardContent>
         </Card>
@@ -60,7 +60,7 @@ export default function FRCRobotProject() {
           </CardHeader>
           <CardContent>
             <p className="text-muted-foreground">
-              In 2024, the FRC game was to shoot "notes" into an elevated goal, as well as climb on a chain.
+              In 2024, the FRC game was to shoot &ldquo;notes&rdquo; into an elevated goal, as well as climb on a chain.
             </p>
           </CardContent>
         </Card>
@@ -76,16 +76,15 @@ export default function FRCRobotProject() {
               <h3 className="text-lg font-semibold">Shooter and Pivot System</h3>
               <ul className="list-inside list-disc space-y-2 text-muted-foreground">
                 <li>
-                  I designed the shooter's home position allow the robot to score easily without needing to use pivot in
-                  case of failure
+                  Designed the shooter&apos;s home position so the robot could still score without the pivot in case of
+                  failure
                 </li>
                 <li>
-                  Two brushless motors on an 18:24 overdrive power the shooter for high-speed and accurate shooting with
-                  quicks spin-up time
+                  Two brushless motors on an 18:24 overdrive power the shooter for high-speed, accurate shooting with
+                  quick spin-up time
                 </li>
                 <li>
-                  The shooter has an Indexer to hold notes before shooting to precisily control when to shoot based on
-                  the driver{" "}
+                  An indexer holds notes before shooting, giving the driver precise control over when to fire
                 </li>
               </ul>
 
@@ -94,15 +93,15 @@ export default function FRCRobotProject() {
                 <li>
                   Uses four brushless motors on a 40:1 reduction for quick angle adjustments, even for the heavy arm
                 </li>
-                <li>Becuase of the four 500w motors it is able to use the arm to climb on a chain.</li>
-                <li>Mounted on a 0.75" dead axle with roller bearings for robustness</li>
+                <li>Because of the four 500W motors, the arm is strong enough to climb on a chain</li>
+                <li>Mounted on a 0.75&quot; dead axle with roller bearings for robustness</li>
               </ul>
 
               <h3 className="text-lg font-semibold">Swerve Drivebase</h3>
               <ul className="list-inside list-disc space-y-2 text-muted-foreground">
                 <li>
-                  Designed the robot's swerve drivebase to be as compact as possible (only 26"x26") and to also keep the
-                  electronics + battery low to the ground
+                  Designed the robot&apos;s swerve drivebase to be as compact as possible (only 26&quot;x26&quot;) while keeping the
+                  electronics and battery low to the ground
                 </li>
               </ul>
             </div>
@@ -118,14 +117,13 @@ export default function FRCRobotProject() {
               <div>
                 <h3 className="text-lg font-semibold">Utah Regional Autonomous Award</h3>
                 <p className="text-muted-foreground">
-                  Recognized for exceptional autonomous capabilities and reliable performance during the autonomous
-                  period.
+                  Our autonomous routines scored consistently all weekend &mdash; the judges noticed.
                 </p>
               </div>
               <div>
                 <h3 className="text-lg font-semibold">Idaho Regional Quality Award</h3>
                 <p className="text-muted-foreground">
-                  Acknowledged for outstanding robot construction quality and robust mechanical design.
+                  Awarded for build quality: the robot ran the whole season without a major mechanical failure.
                 </p>
               </div>
             </div>

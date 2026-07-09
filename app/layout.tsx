@@ -1,13 +1,14 @@
 import "./globals.css"
 import type React from "react"
 import Link from "next/link"
-import { Inter } from "next/font/google"
+import { Inter, Space_Grotesk } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 import { ThemeToggle } from "@/components/ui/theme-toggle"
 import { Suspense } from "react"
 import { Analytics } from "@vercel/analytics/react"
 
 const inter = Inter({ subsets: ["latin"] })
+const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-display" })
 
 export const metadata = {
   title: {
@@ -51,22 +52,25 @@ export default function RootLayout({
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body className={`${inter.className} min-h-screen bg-background text-foreground`}>
+      <body className={`${inter.className} ${spaceGrotesk.variable} min-h-screen bg-background text-foreground`}>
         <ThemeProvider>
           <Suspense fallback={null}>
             <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur">
               <div className="container flex h-14 items-center">
-                <nav className="flex items-center  space-x-4 lg:space-x-6">
-                  <Link href="/#home" className="text-sm ml-5 font-medium transition-colors hover:text-primary">
+                <Link href="/#home" className="ml-5 mr-6 font-display text-sm font-bold tracking-tight transition-colors hover:text-primary">
+                  NW
+                </Link>
+                <nav className="flex items-center space-x-4 lg:space-x-6">
+                  <Link href="/#home" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">
                     Home
                   </Link>
-                  <Link href="/#projects" className="text-sm font-medium transition-colors hover:text-primary">
+                  <Link href="/#projects" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">
                     Projects
                   </Link>
-                  <Link href="/#resume" className="text-sm font-medium transition-colors hover:text-primary">
+                  <Link href="/#resume" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">
                     Resume
                   </Link>
-                  <Link href="/blog" className="text-sm font-medium transition-colors hover:text-primary">
+                  <Link href="/blog" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">
                     Blog
                   </Link>
                 </nav>

@@ -25,7 +25,7 @@ export default function LicensePage() {
         </div>
 
         <div className="mb-12">
-          <h1 className="text-4xl font-bold tracking-tight">License &amp; Copyright</h1>
+          <h1 className="font-display text-4xl font-bold tracking-tight">License &amp; Copyright</h1>
           <p className="mt-4 text-xl text-muted-foreground">How this site and its code may be used.</p>
           <a
             href="https://github.com/NikoWeaver/Portfolio"

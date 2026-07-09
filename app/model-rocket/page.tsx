@@ -21,7 +21,7 @@ export default function ModelRocketProject() {
 
         {/* Project Header */}
         <div className="mb-12">
-          <h1 className="text-4xl font-bold tracking-tighter">Model Rocket Project</h1>
+          <h1 className="font-display text-4xl font-bold tracking-tight">Model Rocket Project</h1>
           <p className="mt-4 text-xl text-muted-foreground">Failure! (as seen below)</p>
         </div>
 
@@ -50,24 +50,6 @@ export default function ModelRocketProject() {
           </CardContent>
         </Card>
 
-        {/* Design Features */}
-        {/**
-        <Card className="mb-8">
-          <CardHeader>
-            <CardTitle>Design Features</CardTitle>
-            <CardDescription>Key Components and Innovations</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <ul className="list-inside list-disc space-y-2 text-muted-foreground">
-              <li>3D printed + Vinyl wrapped cardboard tibe airframe to be aerodynamic while beign low cost and robust</li>
-              <li>Easily repairable canards "can" for easy assembly and repair</li>
-              <li>Modular design allowing for easy assembly and modification</li>
-              <li>Arduino based electronics for easy-to use coding and future additions</li>
-            </ul>
-          </CardContent>
-        </Card>
-        */}
-
         <Card className="mb-8">
           <CardHeader>
             <CardTitle>Design Features</CardTitle>
@@ -82,7 +64,7 @@ export default function ModelRocketProject() {
                 <li>Individual fin control for pitch, yaw, and roll stability</li>
                 <li>Custom PID control of all axes</li>
                 <li>Custom explosive charge for parachute deployment</li>
-                <li>3" cardboard tube based design to be easily upgradable, lighweight, and robust</li>
+                <li>3&quot; cardboard tube based design to be easily upgradable, lightweight, and robust</li>
               </ul>
             </div>
           </CardContent>
@@ -96,18 +78,18 @@ export default function ModelRocketProject() {
           <CardContent>
             <div className="space-y-4">
               <ul className="list-inside list-disc space-y-2 text-muted-foreground">
-                <li>The Arduino Uno uno uses I2C to communicate to a gyroscope and accelerometer</li>
+                <li>The Arduino Uno uses I2C to communicate with a gyroscope and accelerometer</li>
                 <li>
-                  The gyroscope data is used with a 3 separate PID loops to keep the rocket stable in Pitch, Yaw, and
-                  Roll. The PID loops also can be used to maintain a set direction or path.
+                  The gyroscope data feeds 3 separate PID loops to keep the rocket stable in pitch, yaw, and
+                  roll. The PID loops can also be used to maintain a set direction or path.
                 </li>
                 <li>
-                  Each fin is independantly controlled to allow for Pitch Yaw and Roll commands to be exectured in
+                  Each fin is independently controlled, so pitch, yaw, and roll commands can be executed in
                   parallel.
                 </li>
                 <li>
-                  Once the rocket stops accelerating the accelerometer is used to monitor when it stops, and then
-                  activate the parachute chage to deploy the parachute
+                  Once the rocket stops accelerating, the accelerometer detects apogee and fires the parachute
+                  charge
                 </li>
                 <li>
                   When the parachute is deployed the fins rotate 90˚ to provide maximum drag to the rocket on its way
@@ -125,9 +107,9 @@ export default function ModelRocketProject() {
           </CardHeader>
           <CardContent>
             <p className="text-muted-foreground">
-              The first flight attempt encountered challenges when the engines failed to ignite. Only three ignited,
-              resulting in a Rapid Unschedule Dissabembly (RUD) This experience provided valuable insights for
-              subsequent launches and led to improvements in the ignition system reliability.
+              Only three of the engines ignited on launch, and the rocket came down hard &mdash; a Rapid Unscheduled
+              Disassembly (RUD). The failure traced back to the ignition wiring, which is the first thing getting
+              redesigned for V2.
             </p>
           </CardContent>
         </Card>
@@ -135,14 +117,14 @@ export default function ModelRocketProject() {
         {/* Future Plans */}
         <Card>
           <CardHeader>
-            <CardTitle>Project Outcomes</CardTitle>
-            <CardDescription>Achievements and Learnings</CardDescription>
+            <CardTitle>What&apos;s Next</CardTitle>
+            <CardDescription>Plans for V2</CardDescription>
           </CardHeader>
           <CardContent>
-            <p className="text-muted-foreground">To launch the rocket in the summer of 2025 I plan to</p>
+            <p className="text-muted-foreground">Before the next launch I plan to:</p>
             <ul className="mt-2 list-inside list-disc space-y-2 text-muted-foreground">
               <li>Build an improved V2 of the rocket</li>
-              <li>Redesign the ingition wiring to be more robust</li>
+              <li>Redesign the ignition wiring to be more robust</li>
             </ul>
           </CardContent>
         </Card>

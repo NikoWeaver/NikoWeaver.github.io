@@ -96,7 +96,7 @@ export default function WindTunnelTranslationProject() {
 
         {/* Project Header */}
         <div className="mb-12">
-          <h1 className="text-4xl font-bold tracking-tighter">Wind Tunnel Translation Project</h1>
+          <h1 className="font-display text-4xl font-bold tracking-tight">Wind Tunnel Translation Project</h1>
           <p className="mt-4 text-xl text-muted-foreground">4 Axis Translation System for Wind Tunnel Testing!</p>
         </div>
 
@@ -109,37 +109,11 @@ export default function WindTunnelTranslationProject() {
           <CardContent>
             <p className="text-muted-foreground">
               For the FPC lab at the University of Utah, I developed a MATLAB simulation and CAD design of a 4-axis arm.
-              The arm will be used to translate a model plane in a wind tunnel. The MATLAB simulation is used to
-              determine the optimal arm design for a designated X, Y, and Pitch rotation all the physics is fully
-              simulated!
+              The arm will be used to translate a model plane in a wind tunnel. The MATLAB simulation determines the
+              optimal arm design for a designated X, Y, and pitch rotation &mdash; all the physics is fully simulated!
             </p>
           </CardContent>
         </Card>
-
-        {/* YouTube Video Embed */}
-        {/*
-        <Card className="mb-8">
-          <CardHeader>
-            <CardTitle>System Demonstration</CardTitle>
-            <CardDescription>Watch the MATLAB simulation in action</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="aspect-video w-full rounded-lg overflow-hidden">
-              <iframe
-                width="100%"
-                height="100%"
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                title="Wind Tunnel Translation System Demo"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="w-full h-full"
-              ></iframe>
-            </div>
-            <p className="mt-4 text-muted-foreground">See the simulation working.</p>
-          </CardContent>
-        </Card>
-        */}
 
         {/* Project Image */}
         <div className="relative mb-12 aspect-video w-full overflow-hidden rounded-lg">
@@ -190,14 +164,14 @@ end`}</code>
             </CardContent>
           </Card>
 
-          {/* Arduino Firmware Code Block */}
+          {/* Arm Optimization Code Block */}
           <Card>
             <CardHeader>
-              <CardTitle>Arm optimization</CardTitle>
+              <CardTitle>Arm Optimization</CardTitle>
               <CardDescription>
-                Every simulation the optimal robot arm is generated. In this case, optimal means the least possible
-                joint length for the specified conditions. The simulation finds the maximum total joint length, then
-                sets each joint to be half of that length, plus 5mm for clearence.
+                Every simulation generates the optimal robot arm. Here, optimal means the least possible
+                joint length for the specified conditions: the simulation finds the maximum total joint length, then
+                sets each joint to half of that length, plus 5mm for clearance.
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -257,7 +231,7 @@ end`}</code>
                 and then assembled to make the full arm.
               </p>
               <p className="text-muted-foreground">
-                Below is the full CAD model of the arm I designed. Please take a look at the model!!
+                Below is the full CAD model of the arm I designed &mdash; give it a spin!
               </p>
             </div>
           </CardContent>
@@ -270,7 +244,7 @@ end`}</code>
             <CardDescription>Interactive model of the translation mechanism</CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="aspect-video w-full rounded-lg overflow-hidden">
+            <div className="aspect-video w-full rounded-lg overflow-hidden bg-muted">
               {!modelError ? (
                 <model-viewer
                   src="https://zmtbsodvdekwtp1d.public.blob.vercel-storage.com/master_asm.glb"
@@ -287,24 +261,17 @@ end`}</code>
                     width: "100%",
                     height: "100%",
                     minHeight: "400px",
-                    backgroundColor: "#f8f9fa",
+                    backgroundColor: "transparent",
                   }}
                   loading="eager"
                   reveal="auto"
                 >
                   <div
                     slot="error"
-                    style={{
-                      position: "absolute",
-                      top: "50%",
-                      left: "50%",
-                      transform: "translate(-50%, -50%)",
-                      textAlign: "center",
-                      padding: "20px",
-                    }}
+                    className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 p-5 text-center"
                   >
-                    <p style={{ color: "#e74c3c", fontSize: "16px", marginBottom: "8px" }}>Unable to load 3D model</p>
-                    <p style={{ color: "#666", fontSize: "14px" }}>
+                    <p className="mb-2 text-destructive">Unable to load 3D model</p>
+                    <p className="text-sm text-muted-foreground">
                       The model may contain unsupported textures or formats.
                     </p>
                     <Button
@@ -319,7 +286,7 @@ end`}</code>
                   </div>
                 </model-viewer>
               ) : (
-                <div className="w-full h-full min-h-[400px] bg-gradient-to-b from-gray-100 to-gray-200 rounded-lg flex items-center justify-center">
+                <div className="w-full h-full min-h-[400px] bg-muted rounded-lg flex items-center justify-center">
                   <div className="text-center p-8">
                     <div className="w-16 h-16 bg-primary/20 rounded-lg mx-auto mb-4 flex items-center justify-center">
                       <svg

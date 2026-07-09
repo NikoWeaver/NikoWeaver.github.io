@@ -23,7 +23,7 @@ export default function CombatRoboticsProject() {
 
         {/* Project Header */}
         <div className="mb-12">
-          <h1 className="text-4xl font-bold tracking-tighter">Combat Robotics Project</h1>
+          <h1 className="font-display text-4xl font-bold tracking-tight">Combat Robotics Project</h1>
           <p className="mt-4 text-xl text-muted-foreground">Spin n out!</p>
         </div>
 
@@ -36,11 +36,11 @@ export default function CombatRoboticsProject() {
           <CardContent>
             <div className="space-y-4">
               <p className="text-muted-foreground">
-                In the Duke combat robotics club I have designed and competed multiple robots
+                In the Duke combat robotics club I have designed and competed with multiple robots.
               </p>
               <p className="text-muted-foreground">
-                I love to build these little robots! I've been gettign better and making them compact but still good
-                fighters!
+                I love building these little robots! With each one I&apos;m getting better at making them compact but
+                still good fighters.
               </p>
             </div>
           </CardContent>
@@ -71,7 +71,7 @@ export default function CombatRoboticsProject() {
                 <h3 className="mb-2 font-semibold">Design Goals</h3>
                 <ul className="list-inside list-disc space-y-2 text-muted-foreground">
                   <li>Spin really fast</li>
-                  <li>Be controllable At high rotational speeds</li>
+                  <li>Be controllable at high rotational speeds</li>
                   <li>High damage output</li>
                   <li>Beautiful In-N-Out aesthetics</li>
                 </ul>
@@ -100,17 +100,17 @@ export default function CombatRoboticsProject() {
           <CardContent>
             <div className="mb-2 space-y-4">
               <p className="text-muted-foreground">
-                This is my second vertical spinner robot. Beta's predecessor, Alpha Freak, was similair but had a poorly
-                designed drive system. Beta freak aimed to fix that by having four wheel drive and in the process also
-                gained a grade 5 titanium wedge to protect against horizontal spinners
+                This is my second vertical spinner robot. Beta&apos;s predecessor, Alpha Freak, was similar but had a poorly
+                designed drive system. Beta Freak fixed that with four-wheel drive, and in the process also
+                gained a grade 5 titanium wedge to protect against horizontal spinners.
               </p>
             </div>
             <div className="grid gap-6 md:grid-cols-2">
               <div>
-                <h3 className="mb-2 font-semibold">Compettion results</h3>
+                <h3 className="mb-2 font-semibold">Competition Results</h3>
                 <ul className="list-inside list-disc space-y-2 text-muted-foreground">
                   <li>4th place finish: 3-2 record</li>
-                  <li>ended up losing due to bad N20 motors failing and essentially disabling the drive system.</li>
+                  <li>Ended up losing when bad N20 motors failed and essentially disabled the drive system</li>
                 </ul>
               </div>
               <div>
@@ -119,7 +119,7 @@ export default function CombatRoboticsProject() {
                   <li>Maximum weapon energy storage</li>
                   <li>Fast driving speed</li>
                   <li>Reliable drive system</li>
-                  <li>Aggresive visuals</li>
+                  <li>Aggressive visuals</li>
                 </ul>
               </div>
             </div>
@@ -174,7 +174,6 @@ export default function CombatRoboticsProject() {
         </Card>
 
         {/* First Drive Video */}
-        {/* First Drive Video */}
         <Card className="mb-8">
           <CardHeader>
             <CardTitle>First Drive</CardTitle>
@@ -208,25 +207,25 @@ export default function CombatRoboticsProject() {
               <div>
                 <h3 className="mb-2 font-semibold">Weapon System Optimization</h3>
                 <p className="text-muted-foreground">
-                  I have made all my weapons from AR500 steel, ordered from Send Cut Send. AR500 is an exceptional
-                  weapon material becuase of its strength, hardness, and high weight. Ar500 hits hard!
+                  I have made all my weapons from AR500 steel, ordered from SendCutSend. AR500 is an exceptional
+                  weapon material because of its strength, hardness, and high weight. AR500 hits hard!
                 </p>
               </div>
               <Separator />
               <div>
                 <h3 className="mb-2 font-semibold">Drive System Reliability</h3>
                 <p className="text-muted-foreground">
-                  For all of my wheels i have used O-rings on PLA. PLA is easy to print, and the O ring provide plenty
-                  of grip for fast driving
+                  All of my wheels are O-rings on PLA hubs. PLA is easy to print, and the O-rings provide plenty
+                  of grip for fast driving.
                 </p>
               </div>
               <Separator />
               <div>
                 <h3 className="mb-2 font-semibold">Manufacturing Method</h3>
                 <p className="text-muted-foreground">
-                  The robot is primarily constructed using 3D printed TPU components with PLA 3D prints for parts that
-                  will not get damages easily The TPu frame makes the robot rigid enough to be functional, but soft so
-                  it can absorb impacts. My robots were printed on my Bambu P1S
+                  The robot is primarily constructed from 3D printed TPU, with PLA prints for parts that
+                  won&apos;t get damaged easily. The TPU frame makes the robot rigid enough to be functional, but soft
+                  enough to absorb impacts. My robots were printed on my Bambu P1S.
                 </p>
               </div>
             </div>
@@ -236,8 +235,8 @@ export default function CombatRoboticsProject() {
 
       {/* Gallery Section */}
       <section className="container mx-auto px-4 py-16">
-        <h2 className="mb-8 text-center text-3xl font-bold tracking-tighter sm:text-4xl">Project Gallery</h2>
-        <div className="grid gap-4 md:grid-cols-2">
+        <h2 className="mb-8 text-center font-display text-3xl font-bold tracking-tight sm:text-4xl">Project Gallery</h2>
+        <div className="mx-auto max-w-3xl">
           <div className="relative aspect-video overflow-hidden rounded-lg">
             <Image
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-04-09%20at%201.47.43%E2%80%AFPM-KgEa1Z6NZzbMbLwLsqQRDKYwMGw6u7.png"
@@ -246,6 +245,7 @@ export default function CombatRoboticsProject() {
               className="object-contain bg-background"
             />
           </div>
+          <p className="mt-2 text-center text-sm text-muted-foreground">Beta Freak, titanium wedge and all.</p>
         </div>
       </section>
     </div>
