@@ -42,9 +42,6 @@ export default function Home() {
         <div className="hero-grid absolute inset-0" aria-hidden="true" />
         <div className="container relative mx-auto px-4 py-24 md:py-32">
         <div className="flex flex-col items-center text-center">
-          <p className="eyebrow mb-4 text-xs font-medium uppercase text-muted-foreground">
-            Aerospace &middot; Robotics &middot; Things that fly, swim, and roll
-          </p>
           <h1 className="font-display text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl text-foreground">
             Niko Weaver
           </h1>
