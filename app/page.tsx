@@ -428,11 +428,12 @@ export default function Home() {
 
           <div className="mb-5">
             <div className="flex flex-wrap items-baseline justify-between gap-x-4">
-              <h3 className="text-lg font-semibold">Chief Engineer</h3>
-              <p className="text-sm text-muted-foreground">Fall 2025 &ndash; Present</p>
+              <h3 className="text-lg font-semibold">President</h3>
+              <p className="text-sm text-muted-foreground">Fall 2024 &ndash; Present</p>
             </div>
             <p className="text-sm text-muted-foreground">Duke Robotics Club</p>
             <ul className="mt-1 list-disc pl-5 text-muted-foreground marker:text-border">
+              <li>Leading a 50-member club building autonomous underwater robots for the international RoboSub competition.</li>
               <li>Leading new AUV development for the RoboSub 2027 competition, managing systems integration and performance testing.</li>
               <li>Coordinating cross-functional teams across mechanical, electrical, and software disciplines to ensure cohesive architecture.</li>
             </ul>
