@@ -22,7 +22,7 @@ const skillGroups = [
       { name: "Python", detail: "RL & scripting", logo: "/logos/python.svg" },
       { name: "Java", detail: "General programming", logo: "/logos/java.svg" },
       { name: "Arduino C++", detail: "Embedded control", logo: "/logos/arduino.svg" },
-      { name: "Agentic Coding", detail: "AI-assisted development", icon: Bot },
+      { name: "Agentic Coding", detail: "AI-assisted dev", icon: Bot },
     ],
   },
   {
@@ -141,7 +141,7 @@ export default function Home() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
-                  Fully 3D printed, $1050 Duke Colab grant, 400g airframe. V2 nearly doubles the thrust of V1
+                  Fully 3D printed, $1100 Duke Colab grant, 400g airframe. V2 nearly doubles the thrust of V1
                   (1.3kg &rarr; 2.5kg) &mdash; flight 2 coming summer 2026.
                 </p>
               </CardContent>
@@ -306,6 +306,14 @@ export default function Home() {
           </div>
 
           <p className="mb-8 text-sm text-muted-foreground">
+            <a href="tel:+16178521905" className="text-primary hover:underline">
+              +1 (617) 852-1905
+            </a>
+            <span className="mx-2">&middot;</span>
+            <a href="mailto:niko.weaver@duke.edu" className="text-primary hover:underline">
+              niko.weaver@duke.edu
+            </a>
+            <span className="mx-2">&middot;</span>
             <a
               href="https://linkedin.com/in/niko-weaver"
               target="_blank"
@@ -313,14 +321,6 @@ export default function Home() {
               className="text-primary hover:underline"
             >
               linkedin.com/in/niko-weaver
-            </a>
-            <span className="mx-2">&middot;</span>
-            <a href="tel:+16178521905" className="text-primary hover:underline">
-              +1 (617) 852-1905
-            </a>
-            <span className="mx-2">&middot;</span>
-            <a href="mailto:nikoweaver@gmail.com" className="text-primary hover:underline">
-              nikoweaver@gmail.com
             </a>
           </p>
 
@@ -331,82 +331,20 @@ export default function Home() {
           <div className="mb-5">
             <div className="flex flex-wrap items-baseline justify-between gap-x-4">
               <h3 className="text-lg font-semibold">Duke University, Durham NC</h3>
-              <p className="text-sm text-muted-foreground">Expected Spring 2028</p>
+              <p className="text-sm text-muted-foreground">Expected May 2028</p>
             </div>
             <ul className="mt-1 list-disc pl-5 text-muted-foreground marker:text-border">
-              <li>Bachelor of Science in Engineering</li>
-              <li>Major in Mechanical Engineering, Aerospace Certificate, Minor in Math</li>
-              <li>Relevant coursework: Space Systems Design, Thermodynamics, Mechatronics, Dynamics</li>
+              <li>B.S.E. Mechanical Engineering; Aerospace Engineering Certificate</li>
             </ul>
           </div>
 
           <div className="mb-8">
             <div className="flex flex-wrap items-baseline justify-between gap-x-4">
               <h3 className="text-lg font-semibold">Waterford School, Sandy UT</h3>
-              <p className="text-sm text-muted-foreground">August 2020 &ndash; June 2024</p>
+              <p className="text-sm text-muted-foreground">Aug. 2020 &ndash; June 2024</p>
             </div>
             <ul className="mt-1 list-disc pl-5 text-muted-foreground marker:text-border">
-              <li>High school diploma, Summa Cum Laude</li>
-            </ul>
-          </div>
-
-          <h2 className="eyebrow mb-4 border-b pb-2 font-display text-sm font-semibold uppercase text-muted-foreground">
-            Technical Skills
-          </h2>
-          <p className="mb-2 text-muted-foreground">
-            <strong className="font-semibold text-foreground">Software:</strong> Autodesk Fusion CAD, CAM, FEA; Siemens NX CAD; Solidworks CAD; Ansys Fluent CFD; Adobe Photoshop, Illustrator; Microsoft Office suite; Agentic coding
-          </p>
-          <p className="mb-8 text-muted-foreground">
-            <strong className="font-semibold text-foreground">Languages:</strong> MATLAB, Python, Java, Arduino C++
-          </p>
-
-          <h2 className="eyebrow mb-4 border-b pb-2 font-display text-sm font-semibold uppercase text-muted-foreground">
-            Projects
-          </h2>
-
-          <div className="mb-5">
-            <div className="flex flex-wrap items-baseline justify-between gap-x-4">
-              <h3 className="text-lg font-semibold">Reinforcement Learning with MuJoCo</h3>
-              <p className="text-sm text-muted-foreground">Summer 2026</p>
-            </div>
-            <p className="text-sm text-muted-foreground">Duke General Robotics Lab</p>
-            <ul className="mt-1 list-disc pl-5 text-muted-foreground marker:text-border">
-              <li>Developed a digital twin of my robot in MuJoCo to enable iterative control strategy testing and bridge the sim-to-real gap.</li>
-              <li>Trained RL policies to automate and improve locomotion over a heuristic policy.</li>
-            </ul>
-          </div>
-
-          <div className="mb-5">
-            <div className="flex flex-wrap items-baseline justify-between gap-x-4">
-              <h3 className="text-lg font-semibold">Autonomous UAV</h3>
-              <p className="text-sm text-muted-foreground">Summer 2025 &ndash; Present</p>
-            </div>
-            <p className="text-sm text-muted-foreground">Duke Co-Lab grant project</p>
-            <ul className="mt-1 list-disc pl-5 text-muted-foreground marker:text-border">
-              <li>Engineered an autonomous UAV through three design iterations, leveraging CFD analysis to optimize wing geometry and enhance flight endurance.</li>
-            </ul>
-          </div>
-
-          <div className="mb-5">
-            <div className="flex flex-wrap items-baseline justify-between gap-x-4">
-              <h3 className="text-lg font-semibold">RoboSub AUV &mdash; Duke Robotics Club</h3>
-              <p className="text-sm text-muted-foreground">Fall 2024 &ndash; Present</p>
-            </div>
-            <ul className="mt-1 list-disc pl-5 text-muted-foreground marker:text-border">
-              <li>Led design for primary structural components; redesigned the buoyancy system using CAD/FEA simulation, reducing drag by 30% and improving control.</li>
-              <li>7th Place Overall at RoboSub 2025 and 3rd Best Design Report.</li>
-            </ul>
-          </div>
-
-          <div className="mb-8">
-            <div className="flex flex-wrap items-baseline justify-between gap-x-4">
-              <h3 className="text-lg font-semibold">Self-Guided Rocket</h3>
-              <p className="text-sm text-muted-foreground">Summer 2023</p>
-            </div>
-            <p className="text-sm text-muted-foreground">Independent project</p>
-            <ul className="mt-1 list-disc pl-5 text-muted-foreground marker:text-border">
-              <li>Designed, manufactured, and test-flew a 1-meter canard-guided rocket.</li>
-              <li>Implemented a closed-loop control system using IMU sensors and Arduino to maintain stable flight trajectories during high-velocity maneuvers.</li>
+              <li>High School Diploma, Summa Cum Laude</li>
             </ul>
           </div>
 
@@ -416,40 +354,101 @@ export default function Home() {
 
           <div className="mb-5">
             <div className="flex flex-wrap items-baseline justify-between gap-x-4">
-              <h3 className="text-lg font-semibold">Undergraduate Researcher</h3>
-              <p className="text-sm text-muted-foreground">Fall 2025 &ndash; Present</p>
+              <h3 className="text-lg font-semibold">President</h3>
+              <p className="text-sm text-muted-foreground">Sep. 2024 &ndash; Present</p>
             </div>
-            <p className="text-sm text-muted-foreground">Duke University General Robotics Lab</p>
+            <p className="text-sm text-muted-foreground">Duke Robotics Club</p>
             <ul className="mt-1 list-disc pl-5 text-muted-foreground marker:text-border">
-              <li>Leading the design of an underwater rolling robot, in preparation for publication.</li>
-              <li>Developing novel locomotion and communication methods for swarm robotics.</li>
+              <li>Leading a 50 member club to build autonomous underwater robots for the annual international RoboSub Competition. Coordinating mechanical, electrical, and software integration.</li>
+              <li>Designed an AUV frame, hydrodynamic shell, and buoyancy system, reducing simulated drag by 29% in Ansys Fluent.</li>
+              <li>Contributed to a 7th-place overall finish at RoboSub 2025 and a 3rd-place design report.</li>
             </ul>
           </div>
 
           <div className="mb-5">
             <div className="flex flex-wrap items-baseline justify-between gap-x-4">
-              <h3 className="text-lg font-semibold">President</h3>
-              <p className="text-sm text-muted-foreground">Fall 2024 &ndash; Present</p>
+              <h3 className="text-lg font-semibold">Undergraduate Researcher</h3>
+              <p className="text-sm text-muted-foreground">Aug. 2025 &ndash; Present</p>
             </div>
-            <p className="text-sm text-muted-foreground">Duke Robotics Club</p>
+            <p className="text-sm text-muted-foreground">Duke University General Robotics Lab</p>
             <ul className="mt-1 list-disc pl-5 text-muted-foreground marker:text-border">
-              <li>Leading a 50-member club building autonomous underwater robots for the international RoboSub competition.</li>
-              <li>Leading new AUV development for the RoboSub 2027 competition, managing systems integration and performance testing.</li>
-              <li>Coordinating cross-functional teams across mechanical, electrical, and software disciplines to ensure cohesive architecture.</li>
+              <li>Lead the electromechanical design of an underwater spherical robot and the preparation of a manuscript describing the platform.</li>
+              <li>Designed a custom PCB in KiCad that cut electronics-enclosure volume by 55% and robot mass by 0.5 kg (17%).</li>
+              <li>Develop locomotion and underwater communication methods for coordinated multi-robot operation.</li>
             </ul>
           </div>
 
-          <div>
+          <div className="mb-8">
             <div className="flex flex-wrap items-baseline justify-between gap-x-4">
-              <h3 className="text-lg font-semibold">Undergraduate Intern</h3>
-              <p className="text-sm text-muted-foreground">Summer 2025</p>
+              <h3 className="text-lg font-semibold">Undergraduate Research Intern</h3>
+              <p className="text-sm text-muted-foreground">May 2025 &ndash; Aug. 2025</p>
             </div>
             <p className="text-sm text-muted-foreground">University of Utah FPC Lab</p>
             <ul className="mt-1 list-disc pl-5 text-muted-foreground marker:text-border">
-              <li>Designed a custom 4-axis robot arm for wind tunnel model manipulation.</li>
-              <li>Developed MATLAB scripts to simulate real-time operation and automate the collection/analysis of torque and drag data, accelerating testing cycles.</li>
+              <li>Designed a custom 4-axis robotic arm to position test models within a constrained wind-tunnel workspace.</li>
+              <li>Built a MATLAB/Simulink model to simulate real-time motion and automate torque and drag data acquisition and analysis.</li>
+              <li>Optimized actuator selection and link lengths against workspace and torque constraints.</li>
             </ul>
           </div>
+
+          <h2 className="eyebrow mb-4 border-b pb-2 font-display text-sm font-semibold uppercase text-muted-foreground">
+            Projects
+          </h2>
+
+          <div className="mb-5">
+            <div className="flex flex-wrap items-baseline justify-between gap-x-4">
+              <h3 className="text-lg font-semibold">Fixed-Wing UAV</h3>
+              <p className="text-sm text-muted-foreground">Summer 2025 &ndash; Present</p>
+            </div>
+            <p className="text-sm text-muted-foreground">Fusion 360, Ansys Fluent, ArduPilot</p>
+            <ul className="mt-1 list-disc pl-5 text-muted-foreground marker:text-border">
+              <li>Secured $1,100 in Duke Co-Lab grant funding; designed and built three airframe revisions, increasing simulated lift by 25%.</li>
+              <li>Analyzed an initial flight test that exposed a thrust deficit; redesigned the airframe and propulsion system, raising predicted thrust-to-weight ratio from 0.6&ndash;0.7 to 1.4 and cutting estimated mass from 2.0 kg to 1.75 kg.</li>
+            </ul>
+          </div>
+
+          <div className="mb-5">
+            <div className="flex flex-wrap items-baseline justify-between gap-x-4">
+              <h3 className="text-lg font-semibold">Underwater Robot Locomotion</h3>
+              <p className="text-sm text-muted-foreground">Summer 2026</p>
+            </div>
+            <p className="text-sm text-muted-foreground">MuJoCo, PyTorch, Python</p>
+            <ul className="mt-1 list-disc pl-5 text-muted-foreground marker:text-border">
+              <li>Built a MuJoCo digital twin for controller iteration and sim-to-real development.</li>
+              <li>Trained PyTorch reinforcement-learning policies and benchmarked locomotion performance against a heuristic controller.</li>
+            </ul>
+          </div>
+
+          <div className="mb-8">
+            <div className="flex flex-wrap items-baseline justify-between gap-x-4">
+              <h3 className="text-lg font-semibold">Canard-Controlled Rocket</h3>
+              <p className="text-sm text-muted-foreground">2023</p>
+            </div>
+            <p className="text-sm text-muted-foreground">Fusion 360, OpenRocket, Arduino C++</p>
+            <ul className="mt-1 list-disc pl-5 text-muted-foreground marker:text-border">
+              <li>Designed and manufactured a 1 m rocket with independently actuated canards and an Arduino-based 3-axis PID controller.</li>
+              <li>Implemented a 1 kHz control loop with IMU-based state estimation, apogee detection, and parachute-deployment logic; traced partial engine ignition during flight testing to an ignition-wiring fault.</li>
+            </ul>
+          </div>
+
+          <h2 className="eyebrow mb-4 border-b pb-2 font-display text-sm font-semibold uppercase text-muted-foreground">
+            Technical Skills
+          </h2>
+          <p className="mb-2 text-muted-foreground">
+            <strong className="font-semibold text-foreground">CAD &amp; Simulation:</strong> Fusion 360, SolidWorks, Siemens NX, Ansys Fluent (CFD), FEA, MATLAB/Simulink, MuJoCo
+          </p>
+          <p className="mb-2 text-muted-foreground">
+            <strong className="font-semibold text-foreground">Manufacturing:</strong> CNC machining, manual milling &amp; turning, FDM/SLA 3D printing, laser cutting, CAM, G-code, GD&amp;T
+          </p>
+          <p className="mb-2 text-muted-foreground">
+            <strong className="font-semibold text-foreground">Electronics &amp; Embedded:</strong> KiCad, PCB &amp; circuit design, STM32, ESP32, Arduino, CAN, I2C, SPI, UART
+          </p>
+          <p className="mb-2 text-muted-foreground">
+            <strong className="font-semibold text-foreground">Programming &amp; Robotics:</strong> Python, C++, PyTorch, ArduPilot, Git
+          </p>
+          <p className="text-muted-foreground">
+            <strong className="font-semibold text-foreground">Other:</strong> Systems integration, technical writing, team leadership, Spanish biliteracy
+          </p>
         </div>
       </section>
     </div>
