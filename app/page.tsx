@@ -1,6 +1,22 @@
 import Link from "next/link"
 import Image from "next/image"
-import { Phone, Linkedin, Mail, Download, Bot } from "lucide-react"
+import {
+  Phone,
+  Linkedin,
+  Mail,
+  Download,
+  Bot,
+  Printer,
+  Cog,
+  Wrench,
+  Zap,
+  Ruler,
+  Cpu,
+  CircuitBoard,
+  Box,
+  Flame,
+  GitBranch,
+} from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
@@ -12,16 +28,36 @@ const skillGroups = [
       { name: "SolidWorks", detail: "CAD", logo: "/logos/solidworks.svg" },
       { name: "Siemens NX", detail: "CAD", logo: "/logos/siemens-nx.png" },
       { name: "Ansys", detail: "Fluent CFD", logo: "/logos/ansys.png" },
-      { name: "KiCad", detail: "PCB design", logo: "/logos/kicad.svg" },
+      { name: "MATLAB", detail: "Simulink & kinematics", logo: "/logos/matlab.png" },
+      { name: "MuJoCo", detail: "Physics simulation", icon: Box },
+    ],
+  },
+  {
+    label: "Manufacturing",
+    skills: [
+      { name: "3D Printing", detail: "FDM & SLA", icon: Printer },
+      { name: "CNC Machining", detail: "CAM & G-code", icon: Cog },
+      { name: "Manual Machining", detail: "Milling & turning", icon: Wrench },
+      { name: "Laser Cutting", detail: "2D fabrication", icon: Zap },
+      { name: "GD&T", detail: "Drawings & tolerancing", icon: Ruler },
+    ],
+  },
+  {
+    label: "Electronics & Embedded",
+    skills: [
+      { name: "KiCad", detail: "PCB & circuit design", logo: "/logos/kicad.svg" },
+      { name: "STM32 & ESP32", detail: "Microcontrollers", icon: Cpu },
+      { name: "Arduino C++", detail: "Embedded control", logo: "/logos/arduino.svg" },
+      { name: "Comm Protocols", detail: "CAN, I2C, SPI, UART", icon: CircuitBoard },
     ],
   },
   {
     label: "Code & Controls",
     skills: [
-      { name: "MATLAB", detail: "Simulation & kinematics", logo: "/logos/matlab.png" },
       { name: "Python", detail: "RL & scripting", logo: "/logos/python.svg" },
+      { name: "PyTorch", detail: "Reinforcement learning", icon: Flame },
       { name: "Java", detail: "General programming", logo: "/logos/java.svg" },
-      { name: "Arduino C++", detail: "Embedded control", logo: "/logos/arduino.svg" },
+      { name: "Git", detail: "Version control", icon: GitBranch },
       { name: "Agentic Coding", detail: "AI-assisted dev", icon: Bot },
     ],
   },
@@ -33,6 +69,18 @@ const skillGroups = [
     ],
   },
 ]
+
+function TechTags({ tags }: { tags: string[] }) {
+  return (
+    <div className="mt-3 flex flex-wrap gap-1.5">
+      {tags.map((tag) => (
+        <span key={tag} className="rounded-full border bg-muted px-2.5 py-0.5 text-xs text-muted-foreground">
+          {tag}
+        </span>
+      ))}
+    </div>
+  )
+}
 
 export default function Home() {
   return (
@@ -49,6 +97,20 @@ export default function Home() {
             Mechanical Engineering Student at{" "}
             <span className="font-medium text-[#00539B] dark:text-[#4ea3e0]">Duke University</span>
           </p>
+          <p className="mt-3 max-w-xl text-muted-foreground">
+            I design, build, and fly things &mdash; UAVs, autonomous underwater robots, and guided rockets.
+          </p>
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <Button asChild size="lg">
+              <Link href="#projects">View Projects</Link>
+            </Button>
+            <Button asChild variant="outline" size="lg">
+              <a href="/NikoWeaverResume.pdf" target="_blank" rel="noopener noreferrer">
+                <Download className="mr-2 h-4 w-4" />
+                Resume
+              </a>
+            </Button>
+          </div>
           <div className="mt-6 flex gap-4">
             {[
               { href: "tel:+16178521905", label: "617-852-1905", sr: "Phone", Icon: Phone, external: false },
@@ -87,12 +149,15 @@ export default function Home() {
         <div className="flex flex-col md:flex-row items-center gap-8 max-w-4xl mx-auto">
           <div className="flex-1">
             <p className="text-lg text-muted-foreground">
-              Hello! I&apos;m Niko Weaver, a Mechanical Engineering student at Duke University. I am really interested in
-              Aerospace and Robotics! I love to play Guitar, Ski and build Rockets
+              Hello! I&apos;m Niko Weaver, a Mechanical Engineering student at Duke University pursuing an Aerospace
+              Engineering certificate. My work centers on aerospace and robotics: I lead the 50-member Duke Robotics
+              Club as president, do research on underwater robots in the Duke General Robotics Lab, and spent last
+              summer designing a wind-tunnel robot arm at the University of Utah.
             </p>
             <p className="mt-4 text-lg text-muted-foreground">
-              I&apos;m a very curious person, and I always love to learn new things. Right now I&apos;m working on my UAV project
-              and have one flight in the books!
+              I learn best by building. Right now that means version 2 of my fully 3D-printed UAV &mdash; flight 1 is
+              in the books, and flight 2 is coming this summer. When I&apos;m not in the shop, I play guitar, ski, and
+              build rockets.
             </p>
             <div className="mt-6">
               <Button asChild>
@@ -144,6 +209,7 @@ export default function Home() {
                   Fully 3D printed, $1100 Duke Colab grant, 400g airframe. V2 nearly doubles the thrust of V1
                   (1.3kg &rarr; 2.5kg) &mdash; flight 2 coming summer 2026.
                 </p>
+                <TechTags tags={["Fusion 360", "Ansys CFD", "ArduPilot"]} />
               </CardContent>
             </Link>
           </Card>
@@ -165,17 +231,10 @@ export default function Home() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
-                  Designed key structural components and cut drag by 30% with a redesigned buoyancy system. Placed
-                  7th overall at RoboSub 2025.
+                  Designed key structural components and cut simulated drag by 29% with a redesigned buoyancy
+                  system. Placed 7th overall at RoboSub 2025 with a 3rd-place design report.
                 </p>
-                <div className="mt-3 inline-block rounded-md bg-neutral-900 px-3 py-2 dark:bg-transparent dark:px-0 dark:py-0">
-                  <Image
-                    src="https://duke-robotics.com/wp-content/uploads/2024/03/cropped-retro-logo-fullwhite-1-1-1.png"
-                    alt="Duke Robotics Club Logo"
-                    width={280}
-                    height={40}
-                  />
-                </div>
+                <TechTags tags={["SolidWorks", "Ansys Fluent", "CNC Milling"]} />
               </CardContent>
             </Link>
           </Card>
@@ -200,6 +259,7 @@ export default function Home() {
                   Designed and optimized a 4-axis robot arm to translate models in a wind tunnel. Used MATLAB for
                   inverse kinematics and real-time control simulation.
                 </p>
+                <TechTags tags={["MATLAB/Simulink", "Inverse Kinematics", "CAD"]} />
               </CardContent>
             </Link>
           </Card>
@@ -224,6 +284,7 @@ export default function Home() {
                   Led the mechanical design of Team 3245&apos;s 2024 robot: shooter, pivot, and a 26&quot;&times;26&quot; swerve
                   drivebase. Took home two regional awards.
                 </p>
+                <TechTags tags={["Team Leadership", "CAD", "Drivetrain Design"]} />
               </CardContent>
             </Link>
           </Card>
@@ -248,9 +309,11 @@ export default function Home() {
                   1-meter canard-guided rocket with 3-axis PID control. Flown in the Bonneville Salt Flats, December
                   2023 &mdash; half the engines ignited, resulting in an RUD (Rapid Unscheduled Disassembly).
                 </p>
+                <TechTags tags={["Arduino C++", "PID Control", "OpenRocket"]} />
               </CardContent>
             </Link>
           </Card>
+
         </div>
       </section>
 

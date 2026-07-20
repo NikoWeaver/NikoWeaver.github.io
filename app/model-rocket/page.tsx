@@ -5,6 +5,12 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
+export const metadata = {
+  title: "Model Rocket Development",
+  description:
+    "Custom 1-meter canard-guided rocket with independently actuated fins and Arduino-based 3-axis PID control.",
+}
+
 export default function ModelRocketProject() {
   return (
     <div className="min-h-screen bg-background">
@@ -22,7 +28,9 @@ export default function ModelRocketProject() {
         {/* Project Header */}
         <div className="mb-12">
           <h1 className="font-display text-4xl font-bold tracking-tight">Model Rocket Project</h1>
-          <p className="mt-4 text-xl text-muted-foreground">Failure! (as seen below)</p>
+          <p className="mt-4 text-xl text-muted-foreground">
+            Canard-guided rocket with 3-axis PID control (and one spectacular failure, seen below)
+          </p>
         </div>
 
         {/* Main Project Image */}
@@ -43,9 +51,11 @@ export default function ModelRocketProject() {
             <CardDescription>Custom Model Rocket Development</CardDescription>
           </CardHeader>
           <CardContent>
-            <p className="text-foreground">
-              I designed and flew a guided rocket in the summer of 2023. Launch 1 failed, but I learned a lot! See
-              technical info below.
+            <p className="text-muted-foreground">
+              In the summer of 2023, I designed, built, and flew a 1-meter guided rocket with independently actuated
+              canards and a custom Arduino-based flight computer. Launch 1 ended in a crash when only half the
+              engines ignited &mdash; but every avionics system worked, and the failure was traced to a fixable
+              wiring fault. Full technical details below.
             </p>
           </CardContent>
         </Card>

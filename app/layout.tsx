@@ -82,7 +82,30 @@ export default function RootLayout({
             <main>{children}</main>
             <footer className="border-t py-6">
               <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
-                <p>&copy; {new Date().getFullYear()} Niko Weaver &mdash; Mechanical Engineering Portfolio.</p>
+                <p>
+                  <a href="mailto:nikoweaver@gmail.com" className="underline underline-offset-4 hover:text-primary">
+                    nikoweaver@gmail.com
+                  </a>
+                  <span className="mx-2">&middot;</span>
+                  <a
+                    href="https://www.linkedin.com/in/niko-weaver/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline underline-offset-4 hover:text-primary"
+                  >
+                    LinkedIn
+                  </a>
+                  <span className="mx-2">&middot;</span>
+                  <a
+                    href="/NikoWeaverResume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline underline-offset-4 hover:text-primary"
+                  >
+                    Resume
+                  </a>
+                </p>
+                <p className="mt-2">&copy; {new Date().getFullYear()} Niko Weaver &mdash; Mechanical Engineering Portfolio.</p>
                 <p className="mt-1">
                   Source code licensed under the{" "}
                   <Link href="/license" className="underline underline-offset-4 hover:text-primary">

@@ -5,6 +5,12 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
+export const metadata = {
+  title: "FRC Robot - Team 3245",
+  description:
+    "Mechanical design lead for Team 3245's 2024 FIRST Robotics Competition robot: shooter, pivot, and swerve drivebase. Winner of two regional awards.",
+}
+
 export default function FRCRobotProject() {
   return (
     <div className="min-h-screen bg-background">

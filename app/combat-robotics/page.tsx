@@ -7,6 +7,12 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Separator } from "@/components/ui/separator"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 
+export const metadata = {
+  title: "Combat Robotics",
+  description:
+    "Antweight combat robots designed and competed by Niko Weaver with Duke Combat Robotics, including a melty-brain spinner and a 4th-place vertical spinner.",
+}
+
 export default function CombatRoboticsProject() {
   return (
     <div className="min-h-screen bg-background">
@@ -23,24 +29,25 @@ export default function CombatRoboticsProject() {
 
         {/* Project Header */}
         <div className="mb-12">
-          <h1 className="font-display text-4xl font-bold tracking-tight">Combat Robotics Project</h1>
-          <p className="mt-4 text-xl text-muted-foreground">Spin n out!</p>
+          <h1 className="font-display text-4xl font-bold tracking-tight">Combat Robotics</h1>
+          <p className="mt-4 text-xl text-muted-foreground">Antweight fighting robots with Duke Combat Robotics</p>
         </div>
 
         {/* Project Mission */}
         <Card className="mb-8">
           <CardHeader>
-            <CardTitle>Antiweight robots!</CardTitle>
+            <CardTitle>Antweight Robots</CardTitle>
             <CardDescription>Why Combat Robotics?</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
               <p className="text-muted-foreground">
-                In the Duke combat robotics club I have designed and competed with multiple robots.
+                In the Duke Combat Robotics club I have designed, built, and competed with multiple antweight (1 lb)
+                robots.
               </p>
               <p className="text-muted-foreground">
-                I love building these little robots! With each one I&apos;m getting better at making them compact but
-                still good fighters.
+                These little robots are fast design cycles at their best: each one teaches me to pack more
+                performance into a tighter, tougher package.
               </p>
             </div>
           </CardContent>
@@ -49,8 +56,8 @@ export default function CombatRoboticsProject() {
         {/* Design Inspiration for Spin-n-out */}
         <Card className="mb-8">
           <CardHeader>
-            <CardTitle>Spin-n-out</CardTitle>
-            <CardDescription>burger!</CardDescription>
+            <CardTitle>Spin-N-Out</CardTitle>
+            <CardDescription>Melty-brain spinner (yes, the burger)</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="mb-2 space-y-4">

@@ -7,6 +7,12 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Separator } from "@/components/ui/separator"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 
+export const metadata = {
+  title: "UAV Design Project",
+  description:
+    "Fully 3D-printed fixed-wing UAV designed, built, and flown by Niko Weaver. Funded by a $1,100 Duke Co-Lab grant.",
+}
+
 export default function UAVProject() {
   return (
     <div className="min-h-screen bg-background">
@@ -37,6 +43,30 @@ export default function UAVProject() {
             priority
           />
         </div>
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>Current Project Status</CardTitle>
+            <CardDescription>7/19/26 - What's been going on?</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-4">
+              <p className="text-muted-foreground">
+                Over the summer I have been prototyping the new version of the UAV, and making great progress:
+              </p>
+              <ul className="list-inside list-disc space-y-2 text-muted-foreground">
+                <li>The frame is fully printed and beats the initial 400g estimate by 50g.</li>
+                <li>The new propellers have been bench-tested and confirmed to deliver the expected thrust.</li>
+                <li>The final parts (wings and tail) are next up on the printer.</li>
+              </ul>
+              <p className="text-muted-foreground">
+                I&apos;m hoping to fly by the end of the summer, ideally in Durham, with a second flight in Salt Lake
+                City also possible. My 3D printer is on loan to the Duke Robotics Club for RoboSub 2026, so printing
+                resumes as soon as I get it back.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+
 
         {/* Flight #1 Section */}
         <Card className="mb-8">
@@ -83,8 +113,8 @@ export default function UAVProject() {
                 <li>Integrate a payload bay for sensor carrying or remote payload deployment </li>
               </ul>
               <p className="text-muted-foreground">
-                I love to push the boundaries of my skills, and this is a great project to do so! I flew the UAV first
-                in the summer of 2025 and plan fly version 2 of the UAV during summer 2026!
+                I love to push the boundaries of my skills, and this is a great project to do so. I first flew the UAV
+                in the summer of 2025 and plan to fly version 2 during summer 2026.
               </p>
             </div>
           </CardContent>
@@ -162,7 +192,7 @@ export default function UAVProject() {
                   <TableCell>Estimated Weight</TableCell>
                   <TableCell>1.5 kg</TableCell>
                   <TableCell>2.0 kg</TableCell>
-                  <TableCell>1.75kg</TableCell>
+                  <TableCell>1.75 kg</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell>Airframe Weight</TableCell>
@@ -173,8 +203,8 @@ export default function UAVProject() {
                 <TableRow>
                   <TableCell>Thrust Output</TableCell>
                   <TableCell>1.5 kg</TableCell>
-                  <TableCell>1.3kg</TableCell>
-                  <TableCell>2.5kg</TableCell>
+                  <TableCell>1.3 kg</TableCell>
+                  <TableCell>2.5 kg</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell>Thrust-to-Weight Ratio</TableCell>
@@ -234,7 +264,7 @@ export default function UAVProject() {
               <div>
                 <h3 className="mb-2 font-semibold">Thrust-to-Weight Optimization</h3>
                 <p className="text-muted-foreground">
-                  The newest iteration will have a 1.5:1 thrust-to-weight ratio, as the new propellers
+                  The newest iteration will have a ~1.4:1 thrust-to-weight ratio, as the new propellers
                   provide nearly double the thrust of the previous iteration.
                 </p>
               </div>
@@ -260,18 +290,18 @@ export default function UAVProject() {
               <div>
                 <h3 className="mb-2 font-semibold">Manufacturing Method</h3>
                 <p className="text-muted-foreground">
-                  The UAV is designed to be entirely 3D printed, with an airframe weight goal of 500g, but ultimately getting down to 400g! This
-                  manufacturing approach allows for rapid prototyping and iterative design improvements while
-                  maintaining structural integrity.
-
-                </p>
-                <p className="text-muted-foreground">
+                  The UAV is designed to be entirely 3D printed, with an initial airframe weight goal of 500g &mdash;
+                  ultimately reaching 400g. This manufacturing approach allows for rapid prototyping and iterative
+                  design improvements while maintaining structural integrity.
                 </p>
               </div>
               <Separator />
               <div>
-                <h3 className="mb-2 font-semibold">MASSIVE Thank you to the Duke Colab for funding this project,
-                  as well as providing 3D printing services, and technical expertise!</h3>
+                <h3 className="mb-2 font-semibold">Acknowledgments</h3>
+                <p className="text-muted-foreground">
+                  Massive thank you to the Duke Co-Lab for funding this project and providing 3D printing services
+                  and technical expertise!
+                </p>
               </div>
             </div>
           </CardContent>
