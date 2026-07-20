@@ -12,7 +12,9 @@ permissions:
 
 concurrency:
   group: pages
-  cancel-in-progress: true
+  # false: don't cancel an in-flight deploy when another push/dispatch arrives.
+  # true was cancelling queued runs that never got a runner.
+  cancel-in-progress: false
 
 jobs:
   build:
