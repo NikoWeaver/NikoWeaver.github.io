@@ -67,6 +67,9 @@ export default function RootLayout({
                   <Link href="/#projects" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">
                     Projects
                   </Link>
+                  <Link href="/#github" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">
+                    GitHub
+                  </Link>
                   <Link href="/#resume" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">
                     Resume
                   </Link>
