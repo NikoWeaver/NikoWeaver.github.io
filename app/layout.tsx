@@ -5,10 +5,15 @@ import { Inter, Space_Grotesk } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 import { ThemeToggle } from "@/components/ui/theme-toggle"
 import { Suspense } from "react"
+import Script from "next/script"
 import { Analytics } from "@vercel/analytics/react"
 
 const inter = Inter({ subsets: ["latin"] })
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-display" })
+
+// Cloudflare Web Analytics: cookieless, no consent banner required.
+// Paste the beacon token from your Cloudflare dashboard here to enable it.
+const CF_BEACON_TOKEN = ""
 
 export const metadata = {
   title: {
@@ -118,6 +123,13 @@ export default function RootLayout({
           </Suspense>
         </ThemeProvider>
         <Analytics />
+        {CF_BEACON_TOKEN && (
+          <Script
+            defer
+            src="https://static.cloudflareinsights.com/beacon.min.js"
+            data-cf-beacon={`{"token": "${CF_BEACON_TOKEN}"}`}
+          />
+        )}
       </body>
     </html>
   )
