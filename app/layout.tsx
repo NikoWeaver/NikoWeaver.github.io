@@ -13,7 +13,7 @@ const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-displ
 
 // Cloudflare Web Analytics: cookieless, no consent banner required.
 // Paste the beacon token from your Cloudflare dashboard here to enable it.
-const CF_BEACON_TOKEN = ""
+const CF_BEACON_TOKEN = "7424d0cd025943788eb338faf915cd55"
 
 export const metadata = {
   title: {
