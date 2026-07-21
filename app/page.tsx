@@ -19,7 +19,6 @@ import {
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { GitHubAnalytics } from "@/components/github-analytics"
 
 const skillGroups = [
   {
@@ -354,9 +353,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* GitHub Analytics Section */}
-      <GitHubAnalytics />
 
       {/* Resume Section */}
       <section id="resume" className="container mx-auto px-4 py-16">
