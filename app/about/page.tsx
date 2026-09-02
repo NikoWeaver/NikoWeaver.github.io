@@ -23,7 +23,7 @@ export default function About() {
             </p>
             <p className="mt-4 text-lg text-muted-foreground">
               I learn best by building. Right now that means version 2 of my fully 3D-printed UAV &mdash; flight 1 is
-              in the books, and flight 2 is coming this summer. When I&apos;m not building trinkets and doodads, I play guitar, ski, and 
+              in the books, and flight 2 is coming this Spring! When I&apos;m not building trinkets and doodads, I play guitar, ski, and 
               bike.
             </p>
             <div className="mt-6">
