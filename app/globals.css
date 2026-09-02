@@ -18,15 +18,6 @@
   color: hsl(0 0% 5%);
 }
 
-/* Faint blueprint grid behind the hero */
-.hero-grid {
-  background-image: linear-gradient(hsl(var(--border) / 0.6) 1px, transparent 1px),
-    linear-gradient(90deg, hsl(var(--border) / 0.6) 1px, transparent 1px);
-  background-size: 44px 44px;
-  mask-image: radial-gradient(ellipse 75% 85% at 50% 40%, black 30%, transparent 75%);
-  -webkit-mask-image: radial-gradient(ellipse 75% 85% at 50% 40%, black 30%, transparent 75%);
-}
-
 .eyebrow {
   letter-spacing: 0.18em;
 }
@@ -57,7 +48,7 @@
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
-    --radius: 0.5rem;
+    --radius: 0.3rem;
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;

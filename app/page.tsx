@@ -1,24 +1,8 @@
 import Link from "next/link"
 import Image from "next/image"
-import {
-  Phone,
-  Linkedin,
-  Mail,
-  Download,
-  Bot,
-  Printer,
-  Cog,
-  Wrench,
-  Zap,
-  Ruler,
-  Cpu,
-  CircuitBoard,
-  Box,
-  Flame,
-  GitBranch,
-} from "lucide-react"
+import { Phone, Linkedin, Mail, Download } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 const skillGroups = [
   {
@@ -29,36 +13,37 @@ const skillGroups = [
       { name: "Siemens NX", detail: "CAD", logo: "/logos/siemens-nx.png" },
       { name: "Ansys", detail: "Fluent CFD", logo: "/logos/ansys.png" },
       { name: "MATLAB", detail: "Simulink & kinematics", logo: "/logos/matlab.png" },
-      { name: "MuJoCo", detail: "Physics simulation", icon: Box },
+      { name: "MuJoCo", detail: "Physics simulation", logo: "/logos/mujoco.png" },
     ],
   },
   {
     label: "Manufacturing",
     skills: [
-      { name: "3D Printing", detail: "FDM & SLA", icon: Printer },
-      { name: "CNC Machining", detail: "CAM & G-code", icon: Cog },
-      { name: "Manual Machining", detail: "Milling & turning", icon: Wrench },
-      { name: "Laser Cutting", detail: "2D fabrication", icon: Zap },
-      { name: "GD&T", detail: "Drawings & tolerancing", icon: Ruler },
+      { name: "3D Printing", detail: "FDM & SLA" },
+      { name: "CNC Machining", detail: "CAM & G-code" },
+      { name: "Manual Machining", detail: "Milling & turning" },
+      { name: "Laser Cutting", detail: "2D fabrication" },
+      { name: "GD&T", detail: "Drawings & tolerancing" },
     ],
   },
   {
     label: "Electronics & Embedded",
     skills: [
       { name: "KiCad", detail: "PCB & circuit design", logo: "/logos/kicad.svg" },
-      { name: "STM32 & ESP32", detail: "Microcontrollers", icon: Cpu },
+      { name: "STM32", detail: "ARM microcontrollers", logo: "/logos/stm32.svg" },
+      { name: "ESP32", detail: "Wi-Fi microcontrollers", logo: "/logos/esp32.svg" },
       { name: "Arduino C++", detail: "Embedded control", logo: "/logos/arduino.svg" },
-      { name: "Comm Protocols", detail: "CAN, I2C, SPI, UART", icon: CircuitBoard },
+      { name: "Comm Protocols", detail: "CAN, I2C, SPI, UART" },
     ],
   },
   {
     label: "Code & Controls",
     skills: [
       { name: "Python", detail: "RL & scripting", logo: "/logos/python.svg" },
-      { name: "PyTorch", detail: "Reinforcement learning", icon: Flame },
+      { name: "PyTorch", detail: "Reinforcement learning", logo: "/logos/pytorch.svg" },
       { name: "Java", detail: "General programming", logo: "/logos/java.svg" },
-      { name: "Git", detail: "Version control", icon: GitBranch },
-      { name: "Agentic Coding", detail: "AI-assisted dev", icon: Bot },
+      { name: "Git", detail: "Version control", logo: "/logos/git.svg" },
+      { name: "Agentic Coding", detail: "AI-assisted dev" },
     ],
   },
   {
@@ -85,124 +70,61 @@ function TechTags({ tags }: { tags: string[] }) {
 export default function Home() {
   return (
     <div className="min-h-screen bg-background">
-      {/* Hero */}
-      <section id="home" className="relative">
-        <div className="hero-grid absolute inset-0" aria-hidden="true" />
-        <div className="container relative mx-auto px-4 py-24 md:py-32">
-        <div className="flex flex-col items-center text-center">
-          <h1 className="font-display text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl text-foreground">
-            Niko Weaver
-          </h1>
-          <p className="mt-4 text-xl text-muted-foreground">
-            Mechanical Engineering Student at{" "}
-            <span className="font-medium text-[#00539B] dark:text-[#4ea3e0]">Duke University</span>
-          </p>
-          <p className="mt-3 max-w-xl text-muted-foreground">
-            I design, build, and fly things &mdash; UAVs, autonomous underwater robots, and guided rockets.
-          </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <Button asChild size="lg">
-              <Link href="#projects">View Projects</Link>
-            </Button>
-            <Button asChild variant="outline" size="lg">
-              <a href="/NikoWeaverResume.pdf" target="_blank" rel="noopener noreferrer">
-                <Download className="mr-2 h-4 w-4" />
-                Resume
+      {/* Intro */}
+      <section id="home" className="container mx-auto px-6 pb-10 pt-16 sm:px-8 md:pb-12 md:pt-20 lg:px-12">
+        <h1 className="font-display text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl">
+          Niko Weaver
+        </h1>
+        <p className="mt-4 text-xl text-muted-foreground">
+          Mechanical Engineering Student at{" "}
+          <span className="font-medium text-[#00539B] dark:text-[#4ea3e0]">Duke University</span>
+        </p>
+        <p className="mt-3 max-w-xl text-muted-foreground">
+          I design, build, and fly things &mdash; UAVs, autonomous underwater robots, and guided rockets.
+        </p>
+        <div className="mt-7 flex flex-wrap gap-2.5">
+          {[
+            { href: "tel:+16178521905", label: "617-852-1905", Icon: Phone, external: false },
+            {
+              href: "https://www.linkedin.com/in/niko-weaver/",
+              label: "LinkedIn",
+              Icon: Linkedin,
+              external: true,
+            },
+            { href: "mailto:nikoweaver@gmail.com", label: "nikoweaver@gmail.com", Icon: Mail, external: false },
+          ].map(({ href, label, Icon, external }) => (
+            <Button
+              key={label}
+              asChild
+              variant="outline"
+              className="rounded-none text-muted-foreground hover:border-foreground hover:text-foreground"
+            >
+              <a href={href} {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}>
+                <Icon className="mr-2 h-4 w-4 flex-shrink-0" aria-hidden="true" />
+                {label}
               </a>
             </Button>
-          </div>
-          <div className="mt-6 flex gap-4">
-            {[
-              { href: "tel:+16178521905", label: "617-852-1905", sr: "Phone", Icon: Phone, external: false },
-              {
-                href: "https://www.linkedin.com/in/niko-weaver/",
-                label: "linkedin.com/in/niko-weaver",
-                sr: "LinkedIn",
-                Icon: Linkedin,
-                external: true,
-              },
-              { href: "mailto:nikoweaver@gmail.com", label: "nikoweaver@gmail.com", sr: "Email", Icon: Mail, external: false },
-            ].map(({ href, label, sr, Icon, external }) => (
-              <div key={sr} className="group relative">
-                <a href={href} {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}>
-                  <Button variant="outline" size="icon">
-                    <Icon className="h-5 w-5" />
-                    <span className="sr-only">{sr}</span>
-                  </Button>
-                </a>
-                <span
-                  role="tooltip"
-                  className="pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 translate-y-1 whitespace-nowrap rounded-md border bg-popover px-2.5 py-1 text-xs text-popover-foreground opacity-0 shadow-md transition-all duration-150 group-focus-within:translate-y-0 group-focus-within:opacity-100 group-hover:translate-y-0 group-hover:opacity-100"
-                >
-                  {label}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
+          ))}
         </div>
       </section>
 
-      {/* About Me Section */}
-      <section id="about" className="container mx-auto px-4 py-16">
-        <h2 className="mb-8 text-center font-display text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">About Me</h2>
-        <div className="flex flex-col md:flex-row items-center gap-8 max-w-4xl mx-auto">
-          <div className="flex-1">
-            <p className="text-lg text-muted-foreground">
-              Hello! I&apos;m Niko Weaver, a Mechanical Engineering student at Duke University pursuing an Aerospace
-              Engineering certificate. My work centers on aerospace and robotics: I lead the 50-member Duke Robotics
-              Club as president, do research on underwater robots in the Duke General Robotics Lab, and spent last
-              summer designing a wind-tunnel robot arm at the University of Utah.
-            </p>
-            <p className="mt-4 text-lg text-muted-foreground">
-              I learn best by building. Right now that means version 2 of my fully 3D-printed UAV &mdash; flight 1 is
-              in the books, and flight 2 is coming this summer. When I&apos;m not in the shop, I play guitar, ski, and
-              build rockets.
-            </p>
-            <div className="mt-6">
-              <Button asChild>
-                <Link href="#projects">View My Projects</Link>
-              </Button>
-            </div>
-          </div>
-          <div className="flex-shrink-0">
-            <figure>
-              <Image
-                src="https://zmtbsodvdekwtp1d.public.blob.vercel-storage.com/IMG_0171.JPG"
-                alt="Niko Weaver"
-                width={280}
-                height={350}
-                className="rounded-md object-cover shadow-md ring-1 ring-border"
-              />
-              <figcaption className="mt-2 text-center text-xs text-muted-foreground">
-                Somewhere with better weather than the machine shop
-              </figcaption>
-            </figure>
-          </div>
-        </div>
-      </section>
-
-      {/* Projects Section */}
-      <section id="projects" className="container mx-auto px-4 py-16">
-        <h2 className="mb-3 text-center font-display text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">Engineering Projects</h2>
-        <p className="mx-auto mb-12 max-w-xl text-center text-muted-foreground">
-          Some flew, one swam, one exploded. Every one of them taught me something.
-        </p>
+      {/* Projects */}
+      <section id="projects" className="container mx-auto px-6 pb-16 sm:px-8 lg:px-12">
+        <h2 className="sr-only">Projects</h2>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {/* UAV Project */}
-          <Card className="group overflow-hidden border transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-lg">
+          <Card className="group overflow-hidden rounded-none border border-border shadow-none transition-colors hover:border-foreground">
             <Link href="/uav-project" className="block">
               <div className="relative aspect-video">
                 <Image
                   src="https://zmtbsodvdekwtp1d.public.blob.vercel-storage.com/IMG_1814.JPG"
                   alt="UAV Design"
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="object-cover"
                 />
               </div>
               <CardHeader>
                 <CardTitle>UAV Design Project</CardTitle>
-                <CardDescription>Aerodynamic UAV Design and Analysis</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
@@ -215,19 +137,18 @@ export default function Home() {
           </Card>
 
           {/* Underwater AUV Project */}
-          <Card className="group overflow-hidden border transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-lg">
+          <Card className="group overflow-hidden rounded-none border border-border shadow-none transition-colors hover:border-foreground">
             <Link href="/underwater-rov" className="block">
               <div className="relative aspect-video">
                 <Image
                   src="/images/minibot-20render.png"
                   alt="Underwater ROV"
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="object-cover"
                 />
               </div>
               <CardHeader>
                 <CardTitle>Underwater AUV</CardTitle>
-                <CardDescription>Duke Robotics Club - RoboSub Competition</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
@@ -240,19 +161,18 @@ export default function Home() {
           </Card>
 
           {/* Wind Tunnel Translation Project */}
-          <Card className="group overflow-hidden border transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-lg">
+          <Card className="group overflow-hidden rounded-none border border-border shadow-none transition-colors hover:border-foreground">
             <Link href="/wind-tunnel-translation" className="block">
               <div className="relative aspect-video bg-muted">
                 <Image
                   src="https://fpc.mech.utah.edu/wp-content/uploads/2024/03/logo_fpc.png"
                   alt="Wind Tunnel Robot Arm"
                   fill
-                  className="object-contain p-8 transition-transform duration-500 group-hover:scale-105"
+                  className="object-contain p-8"
                 />
               </div>
               <CardHeader>
                 <CardTitle>Wind Tunnel Translation Project</CardTitle>
-                <CardDescription>University of Utah - 4-Axis Robot Arm</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
@@ -265,19 +185,18 @@ export default function Home() {
           </Card>
 
           {/* FRC Robot Project */}
-          <Card className="group overflow-hidden border transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-lg">
+          <Card className="group overflow-hidden rounded-none border border-border shadow-none transition-colors hover:border-foreground">
             <Link href="/frc-robot" className="block">
               <div className="relative aspect-video">
                 <Image
                   src="/images/3245bot.jpeg"
                   alt="FRC Robot"
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="object-cover"
                 />
               </div>
               <CardHeader>
                 <CardTitle>FRC Robotics Competition</CardTitle>
-                <CardDescription>Team 3245 Competition Robot</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
@@ -290,19 +209,18 @@ export default function Home() {
           </Card>
 
           {/* Model Rocket Project */}
-          <Card className="group overflow-hidden border transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-lg">
+          <Card className="group overflow-hidden rounded-none border border-border shadow-none transition-colors hover:border-foreground">
             <Link href="/model-rocket" className="block">
               <div className="relative aspect-video">
                 <Image
                   src="/images/rocket111.jpeg"
                   alt="Model Rocket"
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="object-cover"
                 />
               </div>
               <CardHeader>
                 <CardTitle>Model Rocket Development</CardTitle>
-                <CardDescription>Custom Rocket Design and Construction</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
@@ -319,7 +237,7 @@ export default function Home() {
 
       {/* Skills Section */}
       <section id="skills" className="py-16">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-6 sm:px-8 lg:px-12">
           <h2 className="mb-12 text-center font-display text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">Skills</h2>
 
           <div className="mx-auto max-w-4xl space-y-10">
@@ -332,15 +250,13 @@ export default function Home() {
                   {group.skills.map((skill) => (
                     <div
                       key={skill.name}
-                      className="flex w-56 items-center gap-3 rounded-lg border bg-card p-3 transition-colors hover:border-primary/50"
+                      className="flex w-56 items-center gap-3 rounded-none border bg-card p-3 transition-colors hover:border-foreground"
                     >
-                      <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-md bg-background p-2 ring-1 ring-border dark:bg-white/90">
-                        {"logo" in skill ? (
+                      {"logo" in skill && (
+                        <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center bg-background p-2 ring-1 ring-border dark:bg-white/90">
                           <img src={skill.logo} alt="" className="max-h-full max-w-full object-contain" />
-                        ) : (
-                          <skill.icon className="h-6 w-6 text-neutral-700" />
-                        )}
-                      </div>
+                        </div>
+                      )}
                       <div className="min-w-0">
                         <p className="truncate text-sm font-medium">{skill.name}</p>
                         <p className="truncate text-xs text-muted-foreground">{skill.detail}</p>
@@ -355,9 +271,9 @@ export default function Home() {
       </section>
 
       {/* Resume Section */}
-      <section id="resume" className="container mx-auto px-4 py-16">
+      <section id="resume" className="container mx-auto px-6 sm:px-8 lg:px-12 py-16">
         <h2 className="mb-12 text-center font-display text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">Resume</h2>
-        <div className="max-w-3xl mx-auto bg-card text-card-foreground p-8 rounded-lg shadow-lg">
+        <div className="max-w-3xl mx-auto border bg-card text-card-foreground p-8 rounded-none">
           <div className="flex justify-between items-center mb-2">
             <p className="font-display text-3xl font-bold">Niko Weaver</p>
             <Button asChild className="flex items-center gap-2">

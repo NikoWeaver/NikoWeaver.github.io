@@ -17,7 +17,7 @@ export default function BlogPage() {
       {posts.map((post) => {
         const image = post.image && (
           <div
-            className={`relative aspect-video w-full overflow-hidden rounded-lg ${
+            className={`relative aspect-video w-full overflow-hidden rounded-none ${
               post.image.position === "bottom" ? "mt-6 mb-4" : "mb-4"
             }`}
           >

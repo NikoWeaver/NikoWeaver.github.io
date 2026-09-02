@@ -61,8 +61,8 @@ export default function RootLayout({
         <ThemeProvider>
           <Suspense fallback={null}>
             <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur">
-              <div className="container flex h-14 items-center">
-                <Link href="/#home" className="ml-5 mr-6 font-display text-sm font-bold tracking-tight transition-colors hover:text-primary">
+              <div className="container mx-auto flex h-14 items-center px-6 sm:px-8 lg:px-12">
+                <Link href="/#home" className="mr-8 font-display text-sm font-bold tracking-tight transition-colors hover:text-primary">
                   NW
                 </Link>
                 <nav className="flex items-center space-x-4 lg:space-x-6">
@@ -71,6 +71,9 @@ export default function RootLayout({
                   </Link>
                   <Link href="/#projects" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">
                     Projects
+                  </Link>
+                  <Link href="/about" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">
+                    About
                   </Link>
                   <Link href="/#resume" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">
                     Resume

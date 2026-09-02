@@ -86,7 +86,7 @@ export default function CombatRoboticsProject() {
             </div>
             <div className="mt-6">
               <h4 className="mb-2 font-semibold">CAD Prototype</h4>
-              <div className="relative aspect-[16/9] w-full overflow-hidden rounded-lg">
+              <div className="relative aspect-[16/9] w-full overflow-hidden rounded-none">
                 <Image
                   src="https://zmtbsodvdekwtp1d.public.blob.vercel-storage.com/Screenshot%202025-04-09%20at%201.53.02%E2%80%AFPM-8in5uhFdWVSg6MwfOb4OWQhSUhgjyh.png"
                   alt="Combat Robot CAD Model"
@@ -132,7 +132,7 @@ export default function CombatRoboticsProject() {
             </div>
             <div className="mt-6">
               <h4 className="mb-2 font-semibold">CAD Prototype</h4>
-              <div className="relative aspect-[16/9] w-full overflow-hidden rounded-lg">
+              <div className="relative aspect-[16/9] w-full overflow-hidden rounded-none">
                 <Image
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-04-09%20at%201.47.43%E2%80%AFPM-KgEa1Z6NZzbMbLwLsqQRDKYwMGw6u7.png"
                   alt="Combat Robot CAD Model"
@@ -187,7 +187,7 @@ export default function CombatRoboticsProject() {
             <CardDescription>Initial Testing and Performance Evaluation</CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="aspect-video w-full rounded-lg overflow-hidden">
+            <div className="aspect-video w-full rounded-none overflow-hidden">
               <iframe
                 width="100%"
                 height="100%"
@@ -244,7 +244,7 @@ export default function CombatRoboticsProject() {
       <section className="container mx-auto px-4 py-16">
         <h2 className="mb-8 text-center font-display text-3xl font-bold tracking-tight sm:text-4xl">Project Gallery</h2>
         <div className="mx-auto max-w-3xl">
-          <div className="relative aspect-video overflow-hidden rounded-lg">
+          <div className="relative aspect-video overflow-hidden rounded-none">
             <Image
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-04-09%20at%201.47.43%E2%80%AFPM-KgEa1Z6NZzbMbLwLsqQRDKYwMGw6u7.png"
               alt="Beta Freak"

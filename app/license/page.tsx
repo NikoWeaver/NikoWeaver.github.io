@@ -51,7 +51,7 @@ export default function LicensePage() {
               modify, and distribute it, provided the copyright notice and permission notice are included. The software
               is provided &ldquo;as is&rdquo;, without warranty of any kind.
             </p>
-            <pre className="mt-4 overflow-x-auto whitespace-pre-wrap rounded-lg bg-muted p-4 text-xs leading-relaxed font-mono">
+            <pre className="mt-4 overflow-x-auto whitespace-pre-wrap rounded-none bg-muted p-4 text-xs leading-relaxed font-mono">
 {`MIT License
 
 Copyright (c) ${year} Niko Weaver

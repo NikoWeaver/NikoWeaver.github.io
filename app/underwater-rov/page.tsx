@@ -33,7 +33,7 @@ export default function UnderwaterROVProject() {
         </div>
 
         {/* Main Project Image */}
-        <div className="relative mb-12 aspect-video w-full overflow-hidden rounded-lg">
+        <div className="relative mb-12 aspect-video w-full overflow-hidden rounded-none">
           <Image
             src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Minibot%20render-8VNVx5cU7OnkLV89ePrNVPWApd0ElG.png"
             alt="Underwater ROV"

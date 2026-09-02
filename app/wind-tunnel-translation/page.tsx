@@ -116,7 +116,7 @@ export default function WindTunnelTranslationProject() {
         </Card>
 
         {/* Project Image */}
-        <div className="relative mb-12 aspect-video w-full overflow-hidden rounded-lg">
+        <div className="relative mb-12 aspect-video w-full overflow-hidden rounded-none">
           <img
             src="https://zmtbsodvdekwtp1d.public.blob.vercel-storage.com/Multibody%20Explorer%20-%20Optimized_Arm%202025-11-30%2020-25-38%20%28online-video-cutter.com%29.gif"
             alt="Wind Tunnel Translation System Animation"
@@ -133,7 +133,7 @@ export default function WindTunnelTranslationProject() {
               <CardDescription>MATLAB control system implementation</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="bg-muted rounded-lg p-3 overflow-hidden max-h-96">
+              <div className="bg-muted rounded-none p-3 overflow-hidden max-h-96">
                 <pre className="text-[10px] leading-tight whitespace-pre-wrap break-words font-mono">
                   <code>{`function [r1,r2,r3] = fcn(x,y,r,e,L1_val,L2_val,L3_val)
     y = -y; %not sure why the joints are messed up, but this fixes it :)
@@ -175,7 +175,7 @@ end`}</code>
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="bg-muted rounded-lg p-3 overflow-hidden max-h-96">
+              <div className="bg-muted rounded-none p-3 overflow-hidden max-h-96">
                 <pre className="text-[10px] leading-tight whitespace-pre-wrap break-words font-mono">
                   <code>{`% Optimization Algorithm
 % Finds maximum total joint length
@@ -244,7 +244,7 @@ end`}</code>
             <CardDescription>Interactive model of the translation mechanism</CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="aspect-video w-full rounded-lg overflow-hidden bg-muted">
+            <div className="aspect-video w-full rounded-none overflow-hidden bg-muted">
               {!modelError ? (
                 <model-viewer
                   src="https://zmtbsodvdekwtp1d.public.blob.vercel-storage.com/master_asm.glb"
@@ -286,9 +286,9 @@ end`}</code>
                   </div>
                 </model-viewer>
               ) : (
-                <div className="w-full h-full min-h-[400px] bg-muted rounded-lg flex items-center justify-center">
+                <div className="w-full h-full min-h-[400px] bg-muted rounded-none flex items-center justify-center">
                   <div className="text-center p-8">
-                    <div className="w-16 h-16 bg-primary/20 rounded-lg mx-auto mb-4 flex items-center justify-center">
+                    <div className="w-16 h-16 bg-primary/20 rounded-none mx-auto mb-4 flex items-center justify-center">
                       <svg
                         className="w-8 h-8 text-primary/60"
                         fill="none"

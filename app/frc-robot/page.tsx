@@ -34,7 +34,7 @@ export default function FRCRobotProject() {
         </div>
 
         {/* Main Project Image */}
-        <div className="relative mb-12 aspect-[4/3] w-full overflow-hidden rounded-lg">
+        <div className="relative mb-12 aspect-[4/3] w-full overflow-hidden rounded-none">
           <Image
             src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/3245bot.png-bvCoWHqQ7D1V0Ziw3oXpDPbieC9rdm.jpeg"
             alt="FRC Robot"
