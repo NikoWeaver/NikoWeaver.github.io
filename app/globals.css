@@ -8,22 +8,27 @@
   }
 }
 
-::selection {
-  background: hsl(207 100% 30% / 0.9);
-  color: hsl(0 0% 100%);
-}
+/* ===========================================================================
+   THEME TOKENS
+   ---------------------------------------------------------------------------
+   Every visual decision that is *not* structural lives here. The five layout
+   renditions (see lib/themes.ts) each get a [data-theme="…"] block; the
+   attribute is set on <html>, so the header, footer and every inner page pick
+   up the same system, not just the home page.
 
-.dark ::selection {
-  background: hsl(207 70% 55% / 0.9);
-  color: hsl(0 0% 5%);
-}
-
-.eyebrow {
-  letter-spacing: 0.18em;
-}
+   Token groups:
+     colour     – the shadcn/ui variable set, unchanged in name so existing
+                  pages keep working
+     type       – --font-body / --font-display / --font-meta pick between the
+                  four humanist faces defined in lib/fonts.ts
+     measure    – --container, --gutter, --measure, --section-y
+     scale      – --h1 … --body-size, plus tracking
+     surface    – --rule (hairline weight), --shadow, --page-grid
+   ========================================================================= */
 
 @layer base {
   :root {
+    /* --- colour (light) --- */
     --background: 0 0% 100%;
     --foreground: 0 0% 3.9%;
     --card: 0 0% 100%;
@@ -43,21 +48,42 @@
     --border: 0 0% 89.8%;
     --input: 0 0% 89.8%;
     --ring: 0 0% 3.9%;
+    /* the one colour in the system that is allowed to mean something */
+    --mark: 207 100% 30%;
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
+
+    /* --- type --- */
+    --font-body: var(--font-sans);
+    --font-display: var(--font-soft);
+    --font-meta: var(--font-sans);
+
+    /* --- measure --- */
+    --container: 1280px;
+    --gutter: clamp(1.5rem, 4vw, 3rem);
+    --section-y: clamp(3.5rem, 7vw, 6rem);
+    --measure: 66ch;
+
+    /* --- scale --- */
+    --h1: clamp(2.5rem, 6vw, 4rem);
+    --h2: clamp(1.5rem, 3vw, 2.25rem);
+    --h3: 1.125rem;
+    --lead: 1.125rem;
+    --body-size: 1rem;
+    --body-leading: 1.6;
+    --track-display: -0.02em;
+    --track-eyebrow: 0.18em;
+
+    /* --- surface --- */
     --radius: 0.3rem;
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --rule: 1px;
+    --shadow: none;
+    --page-grid: none;
   }
+
   .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
@@ -78,21 +104,347 @@
     --border: 0 0% 14.9%;
     --input: 0 0% 14.9%;
     --ring: 0 0% 83.1%;
+    --mark: 207 70% 58%;
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  /* ---------------------------------------------------------------------
+     01 — GRID (International Typographic Style)
+     One grotesque, one accent, zero radius, wide margins, visible structure.
+     Müller-Brockmann / Ruder / Tschichold.
+     ------------------------------------------------------------------- */
+  [data-theme="swiss"] {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 8%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 8%;
+    --primary: 0 0% 8%;
+    --primary-foreground: 0 0% 100%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 40%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 8%;
+    --accent: 0 0% 96%;
+    --accent-foreground: 0 0% 8%;
+    --border: 0 0% 80%;
+    --input: 0 0% 80%;
+    --ring: 0 0% 8%;
+    --mark: 356 76% 44%;
+
+    --font-body: var(--font-sans);
+    --font-display: var(--font-sans);
+    --font-meta: var(--font-sans);
+
+    --container: 1360px;
+    --gutter: clamp(1.5rem, 5vw, 4.5rem);
+    --section-y: clamp(4rem, 8vw, 7rem);
+    --measure: 58ch;
+
+    --h1: clamp(2.75rem, 8vw, 5.75rem);
+    --h2: clamp(1.5rem, 2.6vw, 2rem);
+    --h3: 1.0625rem;
+    --lead: 1.25rem;
+    --body-size: 1.0625rem;
+    --body-leading: 1.6;
+    --track-display: -0.03em;
+    --track-eyebrow: 0.2em;
+
+    --radius: 0rem;
+    --rule: 1px;
+    --shadow: none;
+  }
+  .dark [data-theme="swiss"],
+  [data-theme="swiss"].dark {
+    --background: 0 0% 6%;
+    --foreground: 0 0% 96%;
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 96%;
+    --primary: 0 0% 96%;
+    --primary-foreground: 0 0% 6%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 62%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 96%;
+    --accent: 0 0% 12%;
+    --accent-foreground: 0 0% 96%;
+    --border: 0 0% 24%;
+    --input: 0 0% 24%;
+    --ring: 0 0% 88%;
+    --mark: 356 82% 62%;
+  }
+
+  /* ---------------------------------------------------------------------
+     02 — JOURNAL (print editorial)
+     Serif face, warm paper, a real 45–75ch measure, contents-page projects.
+     Bringhurst / Lupton / NN-g layer-cake scanning.
+     ------------------------------------------------------------------- */
+  [data-theme="editorial"] {
+    --background: 40 36% 97%;
+    --foreground: 28 14% 13%;
+    --card: 40 40% 98.5%;
+    --card-foreground: 28 14% 13%;
+    --primary: 28 16% 15%;
+    --primary-foreground: 40 36% 97%;
+    --muted: 38 26% 93%;
+    --muted-foreground: 30 9% 39%;
+    --secondary: 38 26% 93%;
+    --secondary-foreground: 28 14% 13%;
+    --accent: 38 26% 93%;
+    --accent-foreground: 28 14% 13%;
+    --border: 33 20% 83%;
+    --input: 33 20% 83%;
+    --ring: 28 14% 13%;
+    --mark: 356 46% 36%;
+
+    --font-body: var(--font-serif);
+    --font-display: var(--font-serif);
+    --font-meta: var(--font-sans);
+
+    --container: 1120px;
+    --gutter: clamp(1.5rem, 5vw, 3.5rem);
+    --section-y: clamp(4rem, 7vw, 6.5rem);
+    --measure: 68ch;
+
+    --h1: clamp(2.5rem, 6.5vw, 5rem);
+    --h2: clamp(1.5rem, 2.8vw, 2.125rem);
+    --h3: 1.375rem;
+    --lead: 1.3125rem;
+    --body-size: 1.1875rem;
+    --body-leading: 1.65;
+    --track-display: -0.01em;
+    --track-eyebrow: 0.16em;
+
+    --radius: 0rem;
+    --rule: 1px;
+    --shadow: none;
+  }
+  .dark [data-theme="editorial"],
+  [data-theme="editorial"].dark {
+    --background: 30 10% 8%;
+    --foreground: 40 24% 92%;
+    --card: 30 10% 10.5%;
+    --card-foreground: 40 24% 92%;
+    --primary: 40 24% 92%;
+    --primary-foreground: 30 10% 8%;
+    --muted: 30 8% 15%;
+    --muted-foreground: 36 11% 66%;
+    --secondary: 30 8% 15%;
+    --secondary-foreground: 40 24% 92%;
+    --accent: 30 8% 15%;
+    --accent-foreground: 40 24% 92%;
+    --border: 32 10% 24%;
+    --input: 32 10% 24%;
+    --ring: 40 24% 88%;
+    --mark: 14 62% 64%;
+  }
+
+  /* ---------------------------------------------------------------------
+     03 — DATASHEET (Tufte)
+     Maximum data-ink. Dense, tabular, monospace metadata, near-zero chrome.
+     ------------------------------------------------------------------- */
+  [data-theme="datasheet"] {
+    --background: 210 24% 99%;
+    --foreground: 215 28% 12%;
+    --card: 210 26% 97.5%;
+    --card-foreground: 215 28% 12%;
+    --primary: 215 28% 14%;
+    --primary-foreground: 210 24% 99%;
+    --muted: 210 22% 95.5%;
+    --muted-foreground: 215 13% 42%;
+    --secondary: 210 22% 95.5%;
+    --secondary-foreground: 215 28% 12%;
+    --accent: 210 22% 95.5%;
+    --accent-foreground: 215 28% 12%;
+    --border: 214 20% 84%;
+    --input: 214 20% 84%;
+    --ring: 205 90% 34%;
+    --mark: 205 92% 32%;
+
+    --font-body: var(--font-sans);
+    --font-display: var(--font-sans);
+    --font-meta: var(--font-mono);
+
+    --container: 1280px;
+    --gutter: clamp(1.25rem, 3.5vw, 2.75rem);
+    --section-y: clamp(3rem, 5vw, 4.5rem);
+    --measure: 76ch;
+
+    --h1: clamp(2rem, 4.5vw, 3.5rem);
+    --h2: clamp(1.25rem, 2vw, 1.625rem);
+    --h3: 1rem;
+    --lead: 1.0625rem;
+    --body-size: 0.9375rem;
+    --body-leading: 1.55;
+    --track-display: -0.025em;
+    --track-eyebrow: 0.14em;
+
+    --radius: 0.125rem;
+    --rule: 1px;
+    --shadow: none;
+  }
+  .dark [data-theme="datasheet"],
+  [data-theme="datasheet"].dark {
+    --background: 215 28% 7%;
+    --foreground: 210 22% 95%;
+    --card: 215 24% 10%;
+    --card-foreground: 210 22% 95%;
+    --primary: 210 22% 95%;
+    --primary-foreground: 215 28% 7%;
+    --muted: 215 22% 13%;
+    --muted-foreground: 214 13% 63%;
+    --secondary: 215 22% 13%;
+    --secondary-foreground: 210 22% 95%;
+    --accent: 215 22% 13%;
+    --accent-foreground: 210 22% 95%;
+    --border: 215 18% 21%;
+    --input: 215 18% 21%;
+    --ring: 196 90% 55%;
+    --mark: 196 92% 58%;
+  }
+
+  /* ---------------------------------------------------------------------
+     04 — GALLERY (prototypical portfolio)
+     Low visual complexity, high prototypicality, one saturated accent.
+     Lindgaard 50 ms / Tuch 17 ms / Reber processing fluency.
+     ------------------------------------------------------------------- */
+  [data-theme="gallery"] {
+    --background: 0 0% 100%;
+    --foreground: 222 26% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 26% 10%;
+    --primary: 207 100% 30%;
+    --primary-foreground: 0 0% 100%;
+    --muted: 220 20% 97%;
+    --muted-foreground: 220 10% 42%;
+    --secondary: 220 20% 97%;
+    --secondary-foreground: 222 26% 10%;
+    --accent: 220 20% 97%;
+    --accent-foreground: 222 26% 10%;
+    --border: 220 15% 90%;
+    --input: 220 15% 90%;
+    --ring: 207 100% 30%;
+    --mark: 207 100% 30%;
+
+    --font-body: var(--font-sans);
+    --font-display: var(--font-soft);
+    --font-meta: var(--font-sans);
+
+    --container: 1200px;
+    --gutter: clamp(1.5rem, 5vw, 3rem);
+    --section-y: clamp(4.5rem, 9vw, 8rem);
+    --measure: 60ch;
+
+    --h1: clamp(3rem, 7.5vw, 5.25rem);
+    --h2: clamp(1.875rem, 4vw, 3rem);
+    --h3: 1.25rem;
+    --lead: 1.1875rem;
+    --body-size: 1.0625rem;
+    --body-leading: 1.65;
+    --track-display: -0.02em;
+    --track-eyebrow: 0.18em;
+
+    --radius: 0.875rem;
+    --rule: 1px;
+    --shadow: 0 1px 2px hsl(222 26% 10% / 0.04), 0 12px 32px -12px hsl(222 26% 10% / 0.12);
+  }
+  .dark [data-theme="gallery"],
+  [data-theme="gallery"].dark {
+    --background: 222 28% 6%;
+    --foreground: 210 22% 97%;
+    --card: 222 22% 9.5%;
+    --card-foreground: 210 22% 97%;
+    --primary: 205 85% 60%;
+    --primary-foreground: 222 28% 6%;
+    --muted: 222 18% 13%;
+    --muted-foreground: 218 12% 67%;
+    --secondary: 222 18% 13%;
+    --secondary-foreground: 210 22% 97%;
+    --accent: 222 18% 13%;
+    --accent-foreground: 210 22% 97%;
+    --border: 220 15% 19%;
+    --input: 220 15% 19%;
+    --ring: 205 85% 60%;
+    --mark: 205 90% 66%;
+    --shadow: 0 1px 2px hsl(0 0% 0% / 0.4), 0 16px 40px -16px hsl(0 0% 0% / 0.7);
+  }
+
+  /* ---------------------------------------------------------------------
+     05 — BLUEPRINT (technical drawing / terminal)
+     Monospace throughout, visible construction grid, drawn enclosures.
+     Loewy MAYA / Palmer common region / Hofmann.
+     ------------------------------------------------------------------- */
+  [data-theme="console"] {
+    --background: 205 44% 96%;
+    --foreground: 214 58% 14%;
+    --card: 205 44% 98%;
+    --card-foreground: 214 58% 14%;
+    --primary: 205 80% 26%;
+    --primary-foreground: 205 44% 98%;
+    --muted: 205 36% 92%;
+    --muted-foreground: 210 24% 38%;
+    --secondary: 205 36% 92%;
+    --secondary-foreground: 214 58% 14%;
+    --accent: 205 36% 92%;
+    --accent-foreground: 214 58% 14%;
+    --border: 205 34% 74%;
+    --input: 205 34% 74%;
+    --ring: 200 95% 32%;
+    --mark: 200 96% 30%;
+
+    --font-body: var(--font-mono);
+    --font-display: var(--font-mono);
+    --font-meta: var(--font-mono);
+
+    --container: 1400px;
+    --gutter: clamp(1rem, 3.5vw, 3rem);
+    --section-y: clamp(3.5rem, 6vw, 5.5rem);
+    --measure: 70ch;
+
+    --h1: clamp(2.25rem, 5.5vw, 4.25rem);
+    --h2: clamp(1.25rem, 2.2vw, 1.75rem);
+    --h3: 1rem;
+    --lead: 1.0625rem;
+    --body-size: 0.9375rem;
+    --body-leading: 1.6;
+    --track-display: -0.02em;
+    --track-eyebrow: 0.2em;
+
+    --radius: 0rem;
+    --rule: 1px;
+    --shadow: none;
+    --page-grid: linear-gradient(hsl(var(--mark) / 0.11) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--mark) / 0.11) 1px, transparent 1px);
+  }
+  .dark [data-theme="console"],
+  [data-theme="console"].dark {
+    --background: 200 30% 5%;
+    --foreground: 168 26% 90%;
+    --card: 200 26% 7.5%;
+    --card-foreground: 168 26% 90%;
+    --primary: 165 88% 48%;
+    --primary-foreground: 200 30% 5%;
+    --muted: 200 22% 11%;
+    --muted-foreground: 190 14% 60%;
+    --secondary: 200 22% 11%;
+    --secondary-foreground: 168 26% 90%;
+    --accent: 200 22% 11%;
+    --accent-foreground: 168 26% 90%;
+    --border: 195 24% 19%;
+    --input: 195 24% 19%;
+    --ring: 165 88% 48%;
+    --mark: 165 90% 52%;
+    --page-grid: linear-gradient(hsl(var(--mark) / 0.07) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--mark) / 0.07) 1px, transparent 1px);
   }
 }
+
+/* ===========================================================================
+   BASE
+   ========================================================================= */
 
 @layer base {
   * {
@@ -104,5 +456,45 @@
   }
   body {
     @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+    font-size: var(--body-size);
+    line-height: var(--body-leading);
   }
+  /* The blueprint construction grid. `none` in every other theme, so this
+     costs nothing when it is not in use. */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image: var(--page-grid);
+    background-size: 32px 32px;
+  }
+  /* Tabular figures wherever numbers are compared down a column. */
+  table,
+  .tnum {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+::selection {
+  background: hsl(var(--mark) / 0.9);
+  color: hsl(var(--primary-foreground));
+}
+
+.eyebrow {
+  letter-spacing: var(--track-eyebrow);
 }

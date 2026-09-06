@@ -1,15 +1,12 @@
 import "./globals.css"
 import type React from "react"
-import Link from "next/link"
-import { Inter, Space_Grotesk } from "next/font/google"
+import { fontVariables } from "@/lib/fonts"
 import { ThemeProvider } from "@/components/theme-provider"
-import { ThemeToggle } from "@/components/ui/theme-toggle"
+import { SiteHeader, SiteFooter } from "@/components/site-chrome"
 import { Suspense } from "react"
 import Script from "next/script"
 import { Analytics } from "@vercel/analytics/react"
-
-const inter = Inter({ subsets: ["latin"] })
-const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-display" })
+import { DEFAULT_THEME } from "@/lib/themes"
 
 // Cloudflare Web Analytics: cookieless, no consent banner required.
 // Paste the beacon token from your Cloudflare dashboard here to enable it.
@@ -45,7 +42,10 @@ export const viewport = {
   ],
 }
 
-const themeScript = `(function(){try{var t=localStorage.getItem('theme');if(t!=='light'&&t!=='dark'){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}var r=document.documentElement;r.classList.remove('light','dark');r.classList.add(t);r.style.colorScheme=t;}catch(e){}})();`
+// Runs before first paint. Sets light/dark (as before) and, if the /preview
+// switcher has stored a layout rendition, applies that too — so there is no
+// flash of the default theme while comparing renditions.
+const themeScript = `(function(){try{var r=document.documentElement;var t=localStorage.getItem('theme');if(t!=='light'&&t!=='dark'){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}r.classList.remove('light','dark');r.classList.add(t);r.style.colorScheme=t;var p=localStorage.getItem('previewTheme');if(p){r.setAttribute('data-theme',p);}}catch(e){}})();`
 
 export default function RootLayout({
   children,
@@ -53,76 +53,27 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    // The font variables must be declared on the SAME element as the theme
+    // tokens that reference them (--font-body: var(--font-inter)). A custom
+    // property containing var() is substituted where it is *declared*, so with
+    // the faces on <body> and the tokens on <html> every --font-* resolved to
+    // the guaranteed-invalid value and the whole site silently fell back to
+    // system sans.
+    <html
+      lang="en"
+      data-theme={DEFAULT_THEME}
+      className={fontVariables}
+      suppressHydrationWarning
+    >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body className={`${inter.className} ${spaceGrotesk.variable} min-h-screen bg-background text-foreground`}>
+      <body className="font-body min-h-screen bg-background text-foreground">
         <ThemeProvider>
           <Suspense fallback={null}>
-            <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur">
-              <div className="container mx-auto flex h-14 items-center px-6 sm:px-8 lg:px-12">
-                <Link href="/#home" className="mr-8 font-display text-sm font-bold tracking-tight transition-colors hover:text-primary">
-                  NW
-                </Link>
-                <nav className="flex items-center space-x-4 lg:space-x-6">
-                  <Link href="/#home" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">
-                    Home
-                  </Link>
-                  <Link href="/#projects" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">
-                    Projects
-                  </Link>
-                  <Link href="/about" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">
-                    About
-                  </Link>
-                  <Link href="/#resume" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">
-                    Resume
-                  </Link>
-                  <Link href="/blog" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">
-                    Blog
-                  </Link>
-                </nav>
-                <div className="ml-auto flex items-center space-x-4">
-                  <ThemeToggle />
-                </div>
-              </div>
-            </header>
-            <main>{children}</main>
-            <footer className="border-t py-6">
-              <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
-                <p>
-                  <a href="mailto:nikoweaver@gmail.com" className="underline underline-offset-4 hover:text-primary">
-                    nikoweaver@gmail.com
-                  </a>
-                  <span className="mx-2">&middot;</span>
-                  <a
-                    href="https://www.linkedin.com/in/niko-weaver/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline underline-offset-4 hover:text-primary"
-                  >
-                    LinkedIn
-                  </a>
-                  <span className="mx-2">&middot;</span>
-                  <a
-                    href="/NikoWeaverResume.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline underline-offset-4 hover:text-primary"
-                  >
-                    Resume
-                  </a>
-                </p>
-                <p className="mt-2">&copy; {new Date().getFullYear()} Niko Weaver &mdash; Mechanical Engineering Portfolio.</p>
-                <p className="mt-1">
-                  Source code licensed under the{" "}
-                  <Link href="/license" className="underline underline-offset-4 hover:text-primary">
-                    MIT License
-                  </Link>
-                  . Trademarks and images belong to their respective owners.
-                </p>
-              </div>
-            </footer>
+            <SiteHeader />
+            <main className="relative z-10">{children}</main>
+            <SiteFooter />
           </Suspense>
         </ThemeProvider>
         <Analytics />

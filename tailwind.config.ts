@@ -13,7 +13,28 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        display: ['var(--font-display)', 'system-ui', 'sans-serif'],
+        // All three resolve to per-theme CSS variables set in app/globals.css.
+        body: ['var(--font-body)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        display: ['var(--font-display)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        // Eyebrows, labels, table metadata — mono in the technical themes.
+        meta: ['var(--font-meta)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+      },
+      maxWidth: {
+        container: 'var(--container)',
+        measure: 'var(--measure)',
+      },
+      spacing: {
+        gutter: 'var(--gutter)',
+        section: 'var(--section-y)',
+      },
+      fontSize: {
+        h1: ['var(--h1)', { lineHeight: '0.95' }],
+        h2: ['var(--h2)', { lineHeight: '1.1' }],
+        h3: ['var(--h3)', { lineHeight: '1.3' }],
+        lead: ['var(--lead)', { lineHeight: '1.5' }],
+      },
+      boxShadow: {
+        theme: 'var(--shadow)',
       },
       colors: {
         background: 'hsl(var(--background))',
@@ -49,6 +70,8 @@ const config: Config = {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
+        // The single accent colour each theme is allowed to use for meaning.
+        mark: 'hsl(var(--mark))',
         chart: {
           '1': 'hsl(var(--chart-1))',
           '2': 'hsl(var(--chart-2))',
