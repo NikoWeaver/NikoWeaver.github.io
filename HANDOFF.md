@@ -42,8 +42,8 @@ This uses the Next.js **App Router**. Every folder inside `app/` with a `page.ts
 | `app/license/page.tsx` | `/license` | License & copyright page (MIT for the code; trademark/image disclaimer). Linked from the global footer. |
 | `app/not-found.tsx` | (any unknown URL) | Custom 404 page. |
 | `app/error.tsx` | (on runtime errors) | Error boundary — catches render/runtime errors and shows a friendly "try again / go home" screen instead of a crash. |
-| `app/globals.css` | — | Global styles: Tailwind imports and the five `[data-theme]` token blocks (colour, type, measure, rhythm, scale) in light and dark. |
-| `app/preview/page.tsx` | `/preview` | Side-by-side harness for the five layout renditions. Not linked from nav, `noindex`. |
+| `app/globals.css` | — | Global styles: Tailwind imports and the six `[data-theme]` token blocks (colour, type, measure, rhythm, scale) in light and dark. |
+| `app/preview/page.tsx` | `/preview` | Side-by-side harness for the six layout renditions. Not linked from nav, `noindex`. |
 
 ### Other top-level pieces
 
@@ -86,7 +86,7 @@ This uses the Next.js **App Router**. Every folder inside `app/` with a `page.ts
 
 ## Layout renditions (the theme system)
 
-The home page exists in **five renditions**. They are not five pages — there is
+The home page exists in **six renditions**. They are not five pages — there is
 one implementation, driven by a token object. Nothing about the site's function
 changed: same sections, same order, same anchors (`#home`, `#projects`,
 `#skills`, `#resume`), same links, same content.
@@ -96,7 +96,7 @@ changed: same sections, same order, same anchors (`#home`, `#projects`,
 | Path | What it is |
 |---|---|
 | `lib/home-content.ts` | **All** home-page copy: hero, the five projects, skills, resume. Every rendition renders this one array. Edit a project blurb here and it changes in all five. |
-| `lib/themes.ts` | The five renditions. Each is an id, a label, a design thesis, its sources, and a `layout` object of *structural* choices. `DEFAULT_THEME` at the bottom is the one the live site ships. |
+| `lib/themes.ts` | The six renditions. Each is an id, a label, a design thesis, its sources, and a `layout` object of *structural* choices. `DEFAULT_THEME` at the bottom is the one the live site ships. |
 | `lib/fonts.ts` | The only file that names a typeface. Four humanist faces (Fira Sans, Alegreya, Fraunces, Fira Mono), exposed as CSS variables. |
 | `app/globals.css` | A `[data-theme="…"]` block per rendition holding every *cosmetic* decision — colour, which face plays which role, measure, rhythm, type scale, radius, shadow. |
 | `components/home/*` | The single implementation. `home-view.tsx` is the page; `projects.tsx`, `skills.tsx`, `resume.tsx` each contain the two-to-four arrangements a token can select. |
@@ -105,7 +105,7 @@ changed: same sections, same order, same anchors (`#home`, `#projects`,
 ### Switching between them
 
 **To look at them:** `npm run dev`, then <http://localhost:3000/preview>. Press
-**1–5**, or use the bar at the bottom. The chevron opens the design rationale
+**1–6**, or use the bar at the bottom. The chevron opens the design rationale
 and sources for whichever one is showing.
 
 The choice is written to `localStorage.previewTheme` and re-applied before
@@ -117,13 +117,14 @@ The circular-arrow button in the bar clears it.
 
 ```ts
 // lib/themes.ts
-export const DEFAULT_THEME: ThemeId = "swiss"   // ← swap for any of the five ids
+export const DEFAULT_THEME: ThemeId = "deployed"   // ← swap for any of the six ids
 ```
 
-### The five
+### The six
 
 | id | Name | Argument |
 |---|---|---|
+| `deployed` | Current | The layout already live, re-typeset in Fraunces over Fira Sans, with the per-project tag pills removed. This is what `DEFAULT_THEME` currently points at. |
 | `swiss` | Grid | Modular grid, one grotesque, one red accent, flush-left axis, numbered sections. Cards. |
 | `editorial` | Journal | Serif on warm paper, a real 45–75 character measure, projects as a numbered contents list. |
 | `datasheet` | Datasheet | Maximum data-ink. Projects become a spec table whose columns are what a reader compares; headline figures under the name. |
@@ -133,7 +134,7 @@ export const DEFAULT_THEME: ThemeId = "swiss"   // ← swap for any of the five 
 Each carries its own `thesis` and `sources` in `lib/themes.ts`, and those are
 what `/preview` displays.
 
-### Adding a sixth
+### Adding another
 
 1. Add its id to `ThemeId` and an entry to `THEMES` in `lib/themes.ts`.
 2. Add `[data-theme="yourid"]` and `.dark [data-theme="yourid"]` blocks in

@@ -113,6 +113,73 @@
   }
 
   /* ---------------------------------------------------------------------
+     00 — CURRENT (the deployed design, re-typeset)
+     Identical geometry, palette and card treatment to what is live today.
+     The only changes: Fraunces carries the display sizes over Fira Sans for
+     reading, and the per-project technology pills are gone.
+     ------------------------------------------------------------------- */
+  [data-theme="deployed"] {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --muted: 0 0% 97.5%;
+    --muted-foreground: 0 0% 45.1%;
+    --secondary: 0 0% 97.5%;
+    --secondary-foreground: 0 0% 9%;
+    --accent: 0 0% 97.5%;
+    --accent-foreground: 0 0% 9%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    /* Duke blue, exactly as the live hero uses it. */
+    --mark: 207 100% 30%;
+
+    --font-body: var(--font-sans);
+    --font-display: var(--font-soft);
+    --font-meta: var(--font-sans);
+
+    --container: 1280px;
+    --gutter: clamp(1.5rem, 4vw, 3rem);
+    --section-y: 4rem;
+    --measure: 36rem;
+
+    --h1: clamp(2.25rem, 5.5vw, 3.75rem);
+    --h2: clamp(1.875rem, 4vw, 3rem);
+    --h3: 1.5rem;
+    --lead: 1.25rem;
+    --body-size: 1rem;
+    --body-leading: 1.6;
+    --track-display: -0.02em;
+    --track-eyebrow: 0.18em;
+
+    --radius: 0rem;
+    --rule: 1px;
+    --shadow: none;
+  }
+  .dark [data-theme="deployed"],
+  [data-theme="deployed"].dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --mark: 207 70% 58%;
+  }
+
+  /* ---------------------------------------------------------------------
      01 — GRID (International Typographic Style)
      One grotesque, one accent, zero radius, wide margins, visible structure.
      Müller-Brockmann / Ruder / Tschichold.

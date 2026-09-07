@@ -19,7 +19,14 @@ export function HomeView({ theme }: { theme: Theme }) {
     <div className="bg-background">
       <Hero theme={theme} />
 
-      <Section theme={theme} id="projects" index={2} label="Projects" note="5 selected">
+      <Section
+        theme={theme}
+        id="projects"
+        index={2}
+        label="Projects"
+        note="5 selected"
+        labelHidden={theme.layout.projectsHeadingHidden}
+      >
         <Projects theme={theme} />
       </Section>
 

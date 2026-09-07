@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react"
 import type { Theme } from "@/lib/themes"
 import { projects, type Project } from "@/lib/home-content"
 import { cn } from "@/lib/utils"
-import { CornerTicks, TechTags } from "./section"
+import { CornerTicks } from "./section"
 
 /**
  * The five projects, arranged four different ways from one array.
@@ -54,16 +54,17 @@ function ProjectGrid({ theme }: { theme: Theme }) {
                 className={p.containImage ? "object-contain p-8" : "object-cover"}
               />
             </div>
-            <div className="flex flex-1 flex-col p-5">
-              <p className="eyebrow font-meta text-xs uppercase text-muted-foreground">
-                {theme.layout.numbered && <span className="text-mark">{num(i)}&nbsp;&nbsp;</span>}
-                {p.domain}
-              </p>
-              <h3 className="mt-2 font-display text-h3 font-semibold tracking-tight">
+            <div className="flex flex-1 flex-col p-6">
+              {theme.layout.cardMeta && (
+                <p className="eyebrow mb-2 font-meta text-xs uppercase text-muted-foreground">
+                  {theme.layout.numbered && <span className="text-mark">{num(i)}&nbsp;&nbsp;</span>}
+                  {p.domain}
+                </p>
+              )}
+              <h3 className="text-h3 font-semibold tracking-tight">
                 {bracket ? `> ${p.title}` : p.title}
               </h3>
               <p className="mt-2 flex-1 text-sm text-muted-foreground">{p.blurb}</p>
-              <TechTags tags={p.tags} theme={theme} />
             </div>
           </Link>
         </li>
@@ -89,13 +90,12 @@ function ProjectIndex({ theme }: { theme: Theme }) {
             )}
             <div className="min-w-0 flex-1">
               <div className="flex flex-wrap items-baseline gap-x-4">
-                <h3 className="font-display text-h3 font-semibold tracking-tight group-hover:text-mark">{p.title}</h3>
+                <h3 className="text-h3 font-semibold tracking-tight group-hover:text-mark">{p.title}</h3>
                 <span className="eyebrow font-meta text-xs uppercase text-muted-foreground">
                   {p.domain} &middot; {p.period}
                 </span>
               </div>
               <p className="mt-2 max-w-measure text-muted-foreground">{p.blurb}</p>
-              <TechTags tags={p.tags} theme={theme} />
             </div>
             <div
               className={cn(
@@ -146,7 +146,7 @@ function ProjectTable({ theme }: { theme: Theme }) {
             <tr key={p.href} className="group border-b border-border align-top hover:bg-muted">
               <td className="tnum py-4 pr-4 font-meta text-xs text-mark">{num(i)}</td>
               <td className="py-4 pr-6">
-                <Link href={p.href} className="font-display text-h3 font-semibold group-hover:text-mark">
+                <Link href={p.href} className="text-h3 font-semibold group-hover:text-mark">
                   {p.title}
                   <ArrowRight
                     aria-hidden
@@ -196,12 +196,13 @@ function ProjectFeature({ theme }: { theme: Theme }) {
                 />
               </div>
               <div className="flex flex-1 flex-col p-6">
-                <p className="eyebrow font-meta text-xs uppercase text-muted-foreground">{p.domain}</p>
-                <h3 className="mt-2 font-display text-h3 font-semibold tracking-tight group-hover:text-mark">
+                {theme.layout.cardMeta && (
+                  <p className="eyebrow mb-2 font-meta text-xs uppercase text-muted-foreground">{p.domain}</p>
+                )}
+                <h3 className="text-h3 font-semibold tracking-tight group-hover:text-mark">
                   {p.title}
                 </h3>
                 <p className="mt-2 flex-1 text-sm text-muted-foreground">{p.blurb}</p>
-                <TechTags tags={p.tags} theme={theme} />
               </div>
             </Link>
           </li>
@@ -237,7 +238,6 @@ function FeatureCard({ project: p, theme }: { project: Project; theme: Theme }) 
         </h3>
         <p className="mt-4 max-w-measure text-muted-foreground">{p.blurb}</p>
         <p className="tnum mt-4 text-sm font-medium">{p.result}</p>
-        <TechTags tags={p.tags} theme={theme} />
         <span className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-mark">
           View project
           <ArrowRight aria-hidden className="h-4 w-4 transition-transform group-hover:translate-x-1" />

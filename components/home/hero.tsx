@@ -17,7 +17,7 @@ const ICONS = { phone: Phone, linkedin: Linkedin, mail: Mail } as const
  * visitor is trying to identify in the first fixation.
  */
 export function Hero({ theme }: { theme: Theme }) {
-  const { heroAlign, showMetrics, useLede, decor } = theme.layout
+  const { heroAlign, showMetrics, useLede, decor, heroResume } = theme.layout
   const centered = heroAlign === "center"
   const bracket = decor === "brackets"
 
@@ -71,23 +71,25 @@ export function Hero({ theme }: { theme: Theme }) {
             </li>
           )
         })}
-        <li>
-          <a
-            href={hero.resumeHref}
-            target="_blank"
-            rel="noopener noreferrer"
-            download
-            className={cn(
-              "inline-flex items-center gap-2 text-sm transition-colors",
-              bracket
-                ? "font-meta text-mark hover:underline"
-                : "rounded-[var(--radius)] border border-transparent bg-primary px-4 py-2 text-primary-foreground hover:opacity-90",
-            )}
-          >
-            <Download className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
-            {bracket ? "[ RESUME.PDF ]" : "Resume"}
-          </a>
-        </li>
+        {heroResume && (
+          <li>
+            <a
+              href={hero.resumeHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              download
+              className={cn(
+                "inline-flex items-center gap-2 text-sm transition-colors",
+                bracket
+                  ? "font-meta text-mark hover:underline"
+                  : "rounded-[var(--radius)] border border-transparent bg-primary px-4 py-2 text-primary-foreground hover:opacity-90",
+              )}
+            >
+              <Download className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
+              {bracket ? "[ RESUME.PDF ]" : "Resume"}
+            </a>
+          </li>
+        )}
       </ul>
 
       {showMetrics && (

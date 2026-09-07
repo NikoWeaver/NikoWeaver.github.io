@@ -52,7 +52,6 @@ export function Section({
       ) : heading === "display" ? (
         <header className={cn("mb-10 md:mb-14", headingAlign === "center" && "text-center")}>
           <h2 className="font-display text-h2 font-bold tracking-[var(--track-display)]">{label}</h2>
-          {note && <p className="mt-3 text-muted-foreground">{note}</p>}
         </header>
       ) : heading === "eyebrow" ? (
         <header className="mb-8 flex items-baseline gap-3 font-meta text-xs">
@@ -100,22 +99,3 @@ export function CornerTicks({ theme }: { theme: Theme }) {
   )
 }
 
-/** Tag pills. Radius, colour and case all come from the active theme. */
-export function TechTags({ tags, theme }: { tags: string[]; theme: Theme }) {
-  const bracket = theme.layout.decor === "brackets"
-  return (
-    <ul className="mt-3 flex flex-wrap gap-1.5">
-      {tags.map((tag) => (
-        <li
-          key={tag}
-          className={cn(
-            "font-meta text-xs text-muted-foreground",
-            bracket ? "text-mark" : "rounded-[var(--radius)] border border-border bg-muted px-2.5 py-0.5",
-          )}
-        >
-          {bracket ? `[${tag}]` : tag}
-        </li>
-      ))}
-    </ul>
-  )
-}

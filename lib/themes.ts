@@ -23,7 +23,7 @@
  *   No component changes are needed unless you want a new structural layout.
  */
 
-export type ThemeId = "swiss" | "editorial" | "datasheet" | "gallery" | "console"
+export type ThemeId = "deployed" | "swiss" | "editorial" | "datasheet" | "gallery" | "console"
 
 /** How the five projects are arranged. */
 export type ProjectsLayout =
@@ -74,10 +74,46 @@ export interface Theme {
     /** Surface decoration: "brackets" draws corner ticks and [bracketed]
      *  labels, the way a drawing sheet marks its frames. */
     decor: "none" | "brackets"
+    /** Offer the resume PDF as a button in the hero alongside the contacts. */
+    heroResume: boolean
+    /** Show the small domain label above a project card's title. */
+    cardMeta: boolean
+    /** Keep the Projects heading for screen readers only — the cards are
+     *  self-evidently the projects, so the label is redundant ink. */
+    projectsHeadingHidden: boolean
   }
 }
 
 export const THEMES: Record<ThemeId, Theme> = {
+  deployed: {
+    id: "deployed",
+    label: "00 — Current",
+    tagline: "The site as deployed, re-typeset in the Gallery pairing.",
+    thesis:
+      "This is the layout already on nikoweaver.github.io — same grid, same card treatment, same centred section headings, same monochrome palette with Duke blue as the one accent — with two changes. The type is the Gallery rendition's pairing: Fraunces, a soft old-style face with optical-size and wonk axes, carrying the display sizes, over Fira Sans for everything a reader actually has to read. And the technology pills are gone from under each project. Those pills repeated in the body copy directly above them and turned five clean cards into forty-odd competing objects; removing them is the cheapest legibility gain on the page.",
+    sources: [
+      "Edward Tufte, The Visual Display of Quantitative Information (1983) — erase redundant ink",
+      "Robert Bringhurst, The Elements of Typographic Style (1992)",
+      "Reber, Schwarz & Winkielman, Processing Fluency and Aesthetic Pleasure (2004)",
+    ],
+    layout: {
+      projects: "grid",
+      skills: "chips",
+      resume: "card",
+      heroAlign: "left",
+      showMetrics: false,
+      useLede: false,
+      numbered: false,
+      heading: "display",
+      headingAlign: "center",
+      sectionRule: false,
+      decor: "none",
+      heroResume: false,
+      cardMeta: false,
+      projectsHeadingHidden: true,
+    },
+  },
+
   swiss: {
     id: "swiss",
     label: "01 — Grid",
@@ -102,6 +138,9 @@ export const THEMES: Record<ThemeId, Theme> = {
       headingAlign: "left",
       sectionRule: true,
       decor: "none",
+      heroResume: true,
+      cardMeta: true,
+      projectsHeadingHidden: false,
     },
   },
 
@@ -129,6 +168,9 @@ export const THEMES: Record<ThemeId, Theme> = {
       headingAlign: "left",
       sectionRule: true,
       decor: "none",
+      heroResume: true,
+      cardMeta: true,
+      projectsHeadingHidden: false,
     },
   },
 
@@ -156,6 +198,9 @@ export const THEMES: Record<ThemeId, Theme> = {
       headingAlign: "left",
       sectionRule: true,
       decor: "none",
+      heroResume: true,
+      cardMeta: true,
+      projectsHeadingHidden: false,
     },
   },
 
@@ -183,6 +228,9 @@ export const THEMES: Record<ThemeId, Theme> = {
       headingAlign: "center",
       sectionRule: false,
       decor: "none",
+      heroResume: true,
+      cardMeta: true,
+      projectsHeadingHidden: false,
     },
   },
 
@@ -210,17 +258,20 @@ export const THEMES: Record<ThemeId, Theme> = {
       headingAlign: "left",
       sectionRule: true,
       decor: "brackets",
+      heroResume: true,
+      cardMeta: true,
+      projectsHeadingHidden: false,
     },
   },
 }
 
-export const THEME_ORDER: ThemeId[] = ["swiss", "editorial", "datasheet", "gallery", "console"]
+export const THEME_ORDER: ThemeId[] = ["deployed", "swiss", "editorial", "datasheet", "gallery", "console"]
 
 /**
  * The rendition the live site uses. Change this one value to promote any of
  * the five to the real home page — nothing else needs to move.
  */
-export const DEFAULT_THEME: ThemeId = "swiss"
+export const DEFAULT_THEME: ThemeId = "deployed"
 
 export function isThemeId(value: unknown): value is ThemeId {
   return typeof value === "string" && value in THEMES
