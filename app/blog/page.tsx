@@ -10,8 +10,8 @@ export const metadata = {
 
 export default function BlogPage() {
   return (
-    <div className="container mx-auto px-4 py-16">
-      <h1 className="mb-2 text-center font-display text-3xl font-bold tracking-tight sm:text-4xl">Blog</h1>
+    <div className="detail-page container mx-auto py-16">
+      <h1 className="mb-2 display-title text-center font-display text-4xl sm:text-5xl">Blog</h1>
       <p className="mb-10 text-center text-sm text-muted-foreground">Build logs, flight tests, and the occasional heartbreak.</p>
 
       {posts.map((post) => {
@@ -28,7 +28,7 @@ export default function BlogPage() {
         return (
           <Card key={post.title} className="mb-8">
             <CardHeader>
-              <div className="flex items-center justify-between">
+              <div className="blog-heading">
                 <div>
                   <CardTitle>{post.title}</CardTitle>
                   <CardDescription>{post.subtitle}</CardDescription>
@@ -39,7 +39,7 @@ export default function BlogPage() {
             <CardContent>
               {post.image?.position !== "bottom" && image}
               {post.paragraphs.map((text, i) => (
-                <p key={i} className="text-muted-foreground mb-4">
+                <p key={i} className="reading-copy text-muted-foreground mb-4 leading-relaxed">
                   {text}
                 </p>
               ))}

@@ -83,15 +83,15 @@ export default function WindTunnelTranslationProject() {
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-8">
+      <div className="detail-page container mx-auto py-8">
         {/* Navigation */}
         <div className="mb-8">
-          <Link href="/">
-            <Button variant="ghost" className="gap-2">
-              <ArrowLeft className="h-4 w-4" />
+          <Button asChild variant="ghost" className="gap-2">
+            <Link href="/">
+              <ArrowLeft className="h-4 w-4" aria-hidden="true" />
               Back to Portfolio
-            </Button>
-          </Link>
+            </Link>
+          </Button>
         </div>
 
         {/* Project Header */}

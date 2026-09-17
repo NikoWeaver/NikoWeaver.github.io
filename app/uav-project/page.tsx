@@ -16,15 +16,15 @@ export const metadata = {
 export default function UAVProject() {
   return (
     <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-8">
+      <div className="detail-page container mx-auto py-8">
         {/* Navigation */}
         <div className="mb-8">
-          <Link href="/">
-            <Button variant="ghost" className="gap-2">
-              <ArrowLeft className="h-4 w-4" />
+          <Button asChild variant="ghost" className="gap-2">
+            <Link href="/">
+              <ArrowLeft className="h-4 w-4" aria-hidden="true" />
               Back to Portfolio
-            </Button>
-          </Link>
+            </Link>
+          </Button>
         </div>
 
         {/* Project Header */}
@@ -46,7 +46,7 @@ export default function UAVProject() {
         <Card className="mb-8">
           <CardHeader>
             <CardTitle>Current Project Status</CardTitle>
-            <CardDescription>9/2/26 - What's been going on?</CardDescription>
+            <CardDescription>9/2/26 - What&apos;s been going on?</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="space-y-4">

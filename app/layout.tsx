@@ -1,7 +1,7 @@
 import "./globals.css"
 import type React from "react"
 import Link from "next/link"
-import { Inter, Space_Grotesk } from "next/font/google"
+import { Inter } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 import { ThemeToggle } from "@/components/ui/theme-toggle"
 import { Suspense } from "react"
@@ -9,7 +9,6 @@ import Script from "next/script"
 import { Analytics } from "@vercel/analytics/react"
 
 const inter = Inter({ subsets: ["latin"] })
-const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-display" })
 
 // Cloudflare Web Analytics: cookieless, no consent banner required.
 // Paste the beacon token from your Cloudflare dashboard here to enable it.
@@ -40,8 +39,8 @@ export const metadata = {
 
 export const viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#0a0a0a" },
+    { media: "(prefers-color-scheme: light)", color: "#f9f8f5" },
+    { media: "(prefers-color-scheme: dark)", color: "#14161a" },
   ],
 }
 
@@ -57,40 +56,38 @@ export default function RootLayout({
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body className={`${inter.className} ${spaceGrotesk.variable} min-h-screen bg-background text-foreground`}>
+      <body className={`${inter.className} min-h-screen bg-background text-foreground`}>
         <ThemeProvider>
+          <a className="skip-link" href="#main-content">Skip to content</a>
           <Suspense fallback={null}>
-            <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur">
-              <div className="container mx-auto flex h-14 items-center px-6 sm:px-8 lg:px-12">
-                <Link href="/#home" className="mr-8 font-display text-sm font-bold tracking-tight transition-colors hover:text-primary">
-                  NW
-                </Link>
-                <nav className="flex items-center space-x-4 lg:space-x-6">
-                  <Link href="/#home" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">
+            <header className="site-header sticky top-0 z-50 w-full border-b backdrop-blur">
+              <div className="header-inner">
+                <nav aria-label="Main navigation" className="site-nav">
+                  <Link href="/#home" className="transition-colors">
                     Home
                   </Link>
-                  <Link href="/#projects" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">
+                  <Link href="/#projects" className="transition-colors">
                     Projects
                   </Link>
-                  <Link href="/about" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">
+                  <Link href="/about" className="transition-colors">
                     About
                   </Link>
-                  <Link href="/#resume" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">
+                  <Link href="/#resume" className="transition-colors">
                     Resume
                   </Link>
-                  <Link href="/blog" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">
+                  <Link href="/blog" className="transition-colors">
                     Blog
                   </Link>
                 </nav>
-                <div className="ml-auto flex items-center space-x-4">
+                <div className="theme-control ml-auto flex items-center">
                   <ThemeToggle />
                 </div>
               </div>
             </header>
-            <main>{children}</main>
-            <footer className="border-t py-6">
+            <main id="main-content" tabIndex={-1}>{children}</main>
+            <footer className="site-footer border-t py-8">
               <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
-                <p>
+                <p className="footer-links flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
                   <a href="mailto:nikoweaver@gmail.com" className="underline underline-offset-4 hover:text-primary">
                     nikoweaver@gmail.com
                   </a>

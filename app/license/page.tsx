@@ -14,14 +14,14 @@ export default function LicensePage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="container mx-auto max-w-3xl px-4 py-8">
+      <div className="detail-page container mx-auto max-w-3xl py-8">
         <div className="mb-8">
-          <Link href="/">
-            <Button variant="ghost" className="gap-2">
-              <ArrowLeft className="h-4 w-4" />
+          <Button asChild variant="ghost" className="gap-2">
+            <Link href="/">
+              <ArrowLeft className="h-4 w-4" aria-hidden="true" />
               Back to Portfolio
-            </Button>
-          </Link>
+            </Link>
+          </Button>
         </div>
 
         <div className="mb-12">

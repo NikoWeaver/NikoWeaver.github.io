@@ -10,12 +10,12 @@ export const metadata = {
 
 export default function About() {
   return (
-    <div className="container mx-auto px-6 py-16 sm:px-8 md:py-20 lg:px-12">
+    <div className="container mx-auto px-6 py-16 sm:px-8 md:py-20 lg:px-8">
       <div className="mx-auto max-w-5xl">
-        <h1 className="mb-8 font-display text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">About Me</h1>
+        <h1 className="mb-8 display-title font-display text-4xl sm:text-5xl">About Me</h1>
 
         <div className="flex flex-col items-start gap-8 md:flex-row">
-          <div className="flex-1">
+          <div className="about-copy flex-1">
             <p className="text-lg text-muted-foreground">
               Hello! I&apos;m Niko Weaver, a Mechanical Engineering student at Duke University pursuing an Aerospace
               Engineering certificate. My work centers on aerospace and robotics: I lead the 50-member Duke Robotics

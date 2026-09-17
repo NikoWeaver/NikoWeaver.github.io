@@ -11,9 +11,18 @@ const config: Config = {
     '*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    container: {
+      screens: {
+        sm: '100%',
+        md: '100%',
+        lg: '100%',
+        xl: '100%',
+        '2xl': '1600px',
+      },
+    },
     extend: {
       fontFamily: {
-        display: ['var(--font-display)', 'system-ui', 'sans-serif'],
+        display: ['Georgia', 'Times New Roman', 'serif'],
       },
       colors: {
         background: 'hsl(var(--background))',

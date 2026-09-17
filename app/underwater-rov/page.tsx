@@ -15,15 +15,15 @@ export const metadata = {
 export default function UnderwaterROVProject() {
   return (
     <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-8">
+      <div className="detail-page container mx-auto py-8">
         {/* Navigation */}
         <div className="mb-8">
-          <Link href="/">
-            <Button variant="ghost" className="gap-2">
-              <ArrowLeft className="h-4 w-4" />
+          <Button asChild variant="ghost" className="gap-2">
+            <Link href="/">
+              <ArrowLeft className="h-4 w-4" aria-hidden="true" />
               Back to Portfolio
-            </Button>
-          </Link>
+            </Link>
+          </Button>
         </div>
 
         {/* Project Header */}
@@ -102,7 +102,7 @@ export default function UnderwaterROVProject() {
               <div>
                 <h3 className="mb-2 font-semibold">Hydrodynamic outer case</h3>
                 <p className="text-muted-foreground">
-                  Over top of the new buoyancy blocks and capsules, I created a custom case that fit over the robot to further improve the robot's hydrodynamics.
+                  Over top of the new buoyancy blocks and capsules, I created a custom case that fit over the robot to further improve the robot&apos;s hydrodynamics.
                 </p>
                 <ul className="mt-2 list-inside list-disc space-y-2 text-muted-foreground">
                   <li>SLS 3D printed Nylon 12 to be lightweight with high strength.</li>
