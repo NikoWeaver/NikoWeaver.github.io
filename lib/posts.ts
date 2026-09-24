@@ -1,6 +1,6 @@
 export type BlogPost = {
   title: string
-  subtitle: string
+  subtitle?: string
   date: string
   image?: {
     src: string
@@ -9,12 +9,30 @@ export type BlogPost = {
     position?: "top" | "bottom"
   }
   paragraphs: string[]
+  /** Optional call-to-action link rendered under the text. */
+  link?: {
+    href: string
+    label: string
+  }
 }
 
 /**
  * Add new posts to the top of this array — the blog page renders them in order.
  */
 export const posts: BlogPost[] = [
+  {
+    title: "Presenting MARBLE, my first publication!",
+    date: "September 2026",
+    image: {
+      src: "/marble/photos/close-shot.jpg",
+      alt: "Close-up of MARBLE, a white spherical robot with passive fins, sitting on a wooden dock by a pond",
+    },
+    paragraphs: ["Check out the project page!"],
+    link: {
+      href: "/marble",
+      label: "View the MARBLE project page",
+    },
+  },
   {
     title: "UAV WINTER UPDATE!",
     subtitle: "We're so back",

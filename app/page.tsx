@@ -77,7 +77,7 @@ export default function Home() {
             and working on DRC and GRL projects remotely!
           </p>
           <p lang="es" className="mt-3 italic text-muted-foreground">
-            Me gusta España, ¡pero me hace mucha ilusión volver a Duke en primavera para seguir con mis proyectos de ingeniería!
+            Me gusta España, ¡pero me hace mucha ilusión volver a Duke en primavera para continuar con mis proyectos de ingeniería!
           </p>
         </div>
         <div className="mt-7 flex flex-wrap gap-2.5">
@@ -112,6 +112,31 @@ export default function Home() {
           <h2>see my projects!</h2>
         </div>
         <div className="grid gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
+          {/* MARBLE Project */}
+          <Card className="project-card group border-0 border-b bg-transparent shadow-none">
+            <Link href="/marble" aria-labelledby="project-marble" className="project-link">
+              <div className="project-image relative aspect-video">
+                <Image
+                  src="/marble/photos/land-water-transition.jpg"
+                  alt="MARBLE spherical robot on the shoreline during amphibious transition trials"
+                  priority
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <CardHeader className="project-header p-0 pb-2.5 pt-5">
+                <CardTitle id="project-marble" className="project-title">MARBLE: Amphibious Robot</CardTitle>
+              </CardHeader>
+              <CardContent className="project-content p-0 pb-5">
+                <p className="project-description text-muted-foreground">
+                  A sealed sphere that rolls on land and propels itself on water by shifting three internal masses.
+                  Co-first-author paper from Duke&apos;s General Robotics Lab, now on arXiv.
+                </p>
+                <span className="project-action">View project <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" /></span>
+              </CardContent>
+            </Link>
+          </Card>
+
           {/* UAV Project */}
           <Card className="project-card group border-0 border-b bg-transparent shadow-none">
             <Link href="/uav-project" aria-labelledby="project-uav" className="project-link">
@@ -119,7 +144,6 @@ export default function Home() {
                 <Image
                   src="https://zmtbsodvdekwtp1d.public.blob.vercel-storage.com/IMG_1814.JPG"
                   alt="Niko’s fixed-wing UAV on the grass at its first flight test"
-                  priority
                   fill
                   className="object-cover"
                 />
@@ -130,7 +154,7 @@ export default function Home() {
               <CardContent className="project-content p-0 pb-5">
                 <p className="project-description text-muted-foreground">
                   Fully 3D printed, $1100 Duke Colab grant, 400g airframe. V2 nearly doubles the thrust of V1
-                  (1.3kg &rarr; 2.5kg) &mdash; flight 2 coming summer 2026.
+                  (1.3kg &rarr; 2.5kg) &mdash; flight 2 coming in 2027.
                 </p>
                 <span className="project-action">View project <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" /></span>
               </CardContent>
@@ -142,7 +166,7 @@ export default function Home() {
             <Link href="/underwater-rov" aria-labelledby="project-auv" className="project-link">
               <div className="project-image relative aspect-video">
                 <Image
-                  src="/images/minibot-20render.png"
+                  src="/images/crush-render.png"
                   alt="CAD rendering of the RoboSub autonomous underwater vehicle"
                   fill
                   className="object-cover"
@@ -352,9 +376,10 @@ export default function Home() {
             </div>
             <p className="project-description text-muted-foreground">Duke University General Robotics Lab</p>
             <ul className="mt-1 list-disc pl-5 text-muted-foreground marker:text-border">
-              <li>Lead the electromechanical design of an underwater spherical robot and the preparation of a manuscript describing the platform.</li>
+              <li>Manuscript currently under review for ICRA 2027, as co-first author.</li>
+              <li>Designed the mechanical, electrical, and software systems of a robot that operates on water and land, and demonstrates high resistance to obstacles.</li>
               <li>Designed a custom PCB in KiCad that cut electronics-enclosure volume by 55% and robot mass by 0.5 kg (17%).</li>
-              <li>Develop locomotion and underwater communication methods for coordinated multi-robot operation.</li>
+              <li>Developed locomotion and underwater communication methods for coordinated multi-robot operation.</li>
             </ul>
           </div>
 

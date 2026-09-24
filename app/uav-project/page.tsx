@@ -113,7 +113,7 @@ export default function UAVProject() {
               </ul>
               <p className="text-muted-foreground">
                 I love to push the boundaries of my skills, and this is a great project to do so. I first flew the UAV
-                in the summer of 2025 and plan to fly version 2 during summer 2026.
+                in the summer of 2025 and plan to fly version 2 in 2027.
               </p>
             </div>
           </CardContent>

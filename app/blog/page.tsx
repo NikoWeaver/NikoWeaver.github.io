@@ -1,5 +1,9 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { ArrowUpRight } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
+
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
 import { posts } from "@/lib/posts"
 
@@ -31,7 +35,7 @@ export default function BlogPage() {
               <div className="blog-heading">
                 <div>
                   <CardTitle>{post.title}</CardTitle>
-                  <CardDescription>{post.subtitle}</CardDescription>
+                  {post.subtitle && <CardDescription>{post.subtitle}</CardDescription>}
                 </div>
                 <span className="text-sm text-muted-foreground">{post.date}</span>
               </div>
@@ -43,6 +47,14 @@ export default function BlogPage() {
                   {text}
                 </p>
               ))}
+              {post.link && (
+                <Button asChild variant="outline" className="contact-link mb-4 rounded-sm">
+                  <Link href={post.link.href}>
+                    {post.link.label}
+                    <ArrowUpRight className="ml-2 h-4 w-4" aria-hidden="true" />
+                  </Link>
+                </Button>
+              )}
               {post.image?.position === "bottom" && image}
             </CardContent>
           </Card>
