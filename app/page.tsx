@@ -377,7 +377,7 @@ export default function Home() {
             <p className="project-description text-muted-foreground">Duke University General Robotics Lab</p>
             <ul className="mt-1 list-disc pl-5 text-muted-foreground marker:text-border">
               <li>Manuscript currently under review for ICRA 2027, as co-first author.</li>
-              <li>Designed the mechanical, electrical, and software systems of a robot that operates on water and land, and demonstrates high resistance to obstacles.</li>
+              <li>Designed the mechanical, electrical, and software systems of a 5.5 kg robot that operates on water and land, and demonstrates high resistance to obstacles.</li>
               <li>Designed a custom PCB in KiCad that cut electronics-enclosure volume by 55% and robot mass by 0.5 kg (17%).</li>
               <li>Developed locomotion and underwater communication methods for coordinated multi-robot operation.</li>
             </ul>
