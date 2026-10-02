@@ -257,6 +257,30 @@ export default function Home() {
             </Link>
           </Card>
 
+          {/* Small Projects */}
+          <Card className="project-card group border-0 border-b bg-transparent shadow-none">
+            <Link href="/small-projects" aria-labelledby="project-small" className="project-link">
+              <div className="project-image relative aspect-video">
+                <Image
+                  src="/small-projects/cubesat-acs-poster.jpg"
+                  alt="CAD render of a hybrid reaction wheel and gyro for CubeSat attitude control"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <CardHeader className="project-header p-0 pb-2.5 pt-5">
+                <CardTitle id="project-small" className="project-title">Small Projects</CardTitle>
+              </CardHeader>
+              <CardContent className="project-content p-0 pb-5">
+                <p className="project-description text-muted-foreground">
+                  Quick builds and side projects: a CubeSat attitude control unit and two modded Voron 3D
+                  printers.
+                </p>
+                <span className="project-action">View projects <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" /></span>
+              </CardContent>
+            </Link>
+          </Card>
+
         </div>
       </section>
 
