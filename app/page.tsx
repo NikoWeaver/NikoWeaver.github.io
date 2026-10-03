@@ -177,8 +177,8 @@ export default function Home() {
               </CardHeader>
               <CardContent className="project-content p-0 pb-5">
                 <p className="project-description text-muted-foreground">
-                  Designed key structural components and cut simulated drag by 29% with a redesigned buoyancy
-                  system. Placed 7th overall at RoboSub 2025 with a 3rd-place design report.
+                  Designed key structural components and cut simulated drag by ~30% with a redesigned buoyancy
+                  system. Placed 7th overall at RoboSub 2025 with a 3rd-place design report, and 11th at RoboSub 2026.
                 </p>
                 <span className="project-action">View project <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" /></span>
               </CardContent>
@@ -388,7 +388,7 @@ export default function Home() {
             <p className="project-description text-muted-foreground">Duke Robotics Club</p>
             <ul className="mt-1 list-disc pl-5 text-muted-foreground marker:text-border">
               <li>Leading a 50 member club to build autonomous underwater robots for the annual international RoboSub Competition. Coordinating mechanical, electrical, and software integration.</li>
-              <li>Designed an AUV frame, hydrodynamic shell, and buoyancy system, reducing simulated drag by 29% in Ansys Fluent.</li>
+              <li>Designed an AUV frame, hydrodynamic shell, and buoyancy system, reducing simulated drag by ~30% in Ansys Fluent.</li>
               <li>Contributed to a 7th-place overall finish at RoboSub 2025 and a 3rd-place design report.</li>
             </ul>
           </div>
